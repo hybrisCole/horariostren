@@ -1,2 +1,0 @@
-# backEnd
-### a Sails application
