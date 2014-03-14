@@ -15,7 +15,7 @@
 module.exports.adapters = {
 
 //  // If you leave the adapter config unspecified
-//   in a model definition, 'default' will be used.
+//   //in a model definition, 'default' will be used.
 //  'default': 'disk',
 //
 //  // Persistent adapter for DEVELOPMENT ONLY
