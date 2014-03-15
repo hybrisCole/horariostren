@@ -14,9 +14,17 @@
 
 module.exports.adapters = {
 
-//  // If you leave the adapter config unspecified
-//   //in a model definition, 'default' will be used.
-//  'default': 'disk',
+  // If you leave the adapter config unspecified
+  //in a model definition, 'default' will be used.
+  'default': 'disk',
+   mongo:{
+     module: 'sails-mongo',
+     host:'troup.mongohq.com',
+     user:process.env.USR_DB,
+     password:process.env.PWD_DB,
+     database:process.env.NAME_DB,
+     schema:true
+   }
 //
 //  // Persistent adapter for DEVELOPMENT ONLY
 //  // (data is preserved when the server shuts down)
