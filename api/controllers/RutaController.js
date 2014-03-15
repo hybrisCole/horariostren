@@ -39,7 +39,7 @@ module.exports = {
     
     // Send a JSON response
     return res.json({
-      hello: 'world'
+      hello: 'worldzz'
     });
   },
 
