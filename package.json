@@ -1,7 +1,7 @@
 {
   "name": "horarios-tren-data",
   "private": true,
-  "version": "0.0.0-9",
+  "version": "0.0.0-13",
   "description": "a Sails application",
   "dependencies": {
     "sails": "0.9.11",
@@ -11,7 +11,7 @@
     "sails-mongo": "0.9.7"
   },
   "scripts": {
-    "start": "sails lift",
+    "start": "node app.js",
     "debug": "node debug app.js"
   },
   "main": "app.js",
