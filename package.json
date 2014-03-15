@@ -1,7 +1,7 @@
 {
   "name": "horarios-tren-data",
   "private": true,
-  "version": "0.0.0-14",
+  "version": "0.0.0-18",
   "description": "a Sails application",
   "dependencies": {
     "sails": "0.9.11",
@@ -20,6 +20,6 @@
   "license": "",
   "subdomain": "horarios-tren-data",
   "engines": {
-    "node": "0.10.26"
+    "node": "0.10.x"
   }
 }
