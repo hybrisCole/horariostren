@@ -19,11 +19,11 @@ module.exports.adapters = {
   'default': 'mongo',
    mongo:{
      module: 'sails-mongo',
-     host:'oceanic.mongohq.com',
-     user:'kei_kurono',
-     password:'123Queso',
-     database:'gantz',
-     port:10089,
+     host:process.env.HOST_DB,
+     user:process.env.USR_DB,
+     password:process.env.PWD_DB,
+     database:process.env.NAME_DB,
+     port:process.env.PORT_DB,
      schema:true
    }
 //
