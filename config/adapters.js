@@ -20,9 +20,9 @@ module.exports.adapters = {
    mongo:{
      module: 'sails-mongo',
      host:'troup.mongohq.com',
-     user:process.env.USR_DB,
-     password:process.env.PWD_DB,
-     database:process.env.NAME_DB,
+     user:'nodejitsu',
+     password:'946c0d7f0d656b2c2a5f35aeffca4112',
+     database:'gantz',
      schema:true
    }
 //
