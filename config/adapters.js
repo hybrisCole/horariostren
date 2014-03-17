@@ -16,7 +16,7 @@ module.exports.adapters = {
 
   // If you leave the adapter config unspecified
   //in a model definition, 'default' will be used.
-  'default': 'disk',
+  'default': 'sails-mongo',
    mongo:{
      module: 'sails-mongo',
      host:'troup.mongohq.com',
