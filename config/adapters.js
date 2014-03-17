@@ -23,6 +23,7 @@ module.exports.adapters = {
      user:'nodejitsu',
      password:'946c0d7f0d656b2c2a5f35aeffca4112',
      database:'gantz',
+     port:27021,
      schema:true
    }
 //
