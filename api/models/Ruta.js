@@ -16,8 +16,7 @@ module.exports = {
     //Esto agrupa las rutas, por ejemplo SAN JOSE - HEREDIA y HEREDIA - SAN JOSE son del mismo grupo
     grupo:{
       type:'INTEGER',
-      required:true,
-      string:true
+      required:true
     }
   }
 };
