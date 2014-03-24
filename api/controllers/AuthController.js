@@ -34,7 +34,7 @@ module.exports = {
   },
   callback:function(req,res){
     passport.authenticate('facebook', { failureRedirect: '/login' });
-    console.log('callback');
+    console.log(req);
   },
 
 
