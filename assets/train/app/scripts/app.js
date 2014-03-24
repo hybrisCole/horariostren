@@ -17,13 +17,13 @@ angular.module('sprintMobile', [
         templateUrl : 'partials/home.html', 
         controller  : 'IndexCtrl',
         resolve     : {
-          Paradas : function(paradas, $q) {
+          Paradas :['paradas','$q',function(paradas, $q) {
             var defer = $q.defer();
             paradas.getParadas().then(function(data){
               return defer.resolve(data);
             });
             return defer.promise;
-          }
+          }]
         }
       })
       .when('/user', {templateUrl: 'partials/user.html', controller: 'UserCtrl'})
