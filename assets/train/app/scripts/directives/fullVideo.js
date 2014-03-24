@@ -12,7 +12,7 @@ angular.module('sprintMobile')
             // initialize BigVideo
             var BV = new $.BigVideo({useFlashForFirefox:false});
             BV.init();
-            BV.show('http://vjs.zencdn.net/v/oceans.mp4', {altSource:'http://vjs.zencdn.net/v/oceans.ogg',ambient:true});
+            BV.show('http://vjs.zencdn.net/v/oceans.mp4', {altSource:'http://vjs.zencdn.net/v/oceans.webm',ambient:true});
             element.height($window.innerHeight);
           }
         }else{
