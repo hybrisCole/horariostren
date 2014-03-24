@@ -41,7 +41,7 @@ angular.module('sprintMobile', [
               return defer.resolve(data);
             });
             return defer.promise;
-          ]}
+          }]
         }
       })
       .otherwise({redirectTo: '/'});
