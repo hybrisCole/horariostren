@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sprintMobile.directives')
-  .directive('fulldiv', function ($window) {
+  .directive('fulldiv', ['$window',function ($window) {
     return {
       restrict: 'A',
       link: function(scope, element, attrs){
@@ -10,4 +10,4 @@ angular.module('sprintMobile.directives')
 		    element.find('.angular-google-map-container').height(inner - 50);
       }
     };
-	});
+	}]);

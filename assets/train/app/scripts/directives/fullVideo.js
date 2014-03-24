@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sprintMobile')
-  .directive('videojs', function ($window, $document, $location){
+  .directive('videojs', ['$window','$document','$location',function ($window, $document, $location){
     return {
       restrict: 'A',
       link: function (scope, element, attrs){
@@ -19,4 +19,4 @@ angular.module('sprintMobile')
         }
 		  }
     };
-  });
+  }]);

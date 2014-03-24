@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sprintMobile.controllers')
-  .controller('NearCtrl', function ($scope, $routeParams, Paradas, $window){
+  .controller('NearCtrl', ['$scope','$routeParams','Paradas','$window',function ($scope, $routeParams, Paradas, $window){
   	var currentId     = $routeParams.id;
   	var currentParada = _.where(Paradas, {'id':currentId});
     //google-maps object setting values
@@ -20,4 +20,4 @@ angular.module('sprintMobile.controllers')
       },
     	zoom : 16
 		};
-  });
+  }]);
