@@ -18,9 +18,19 @@ var passport = require("passport");
 module.exports = {
 
   facebook:function(req,res){
-    passport.authenticate('facebook', { failureRedirect: '/login' },function(){
-      console.log('facebook');
-    });
+    passport.authenticate('facebook', { failureRedirect: '/login', scope: ['email'] },
+      function (err, user) {
+        req.logIn(user, function (err) {
+          if (err) {
+            console.log(err);
+            res.view('500');
+            return;
+          }
+
+          res.redirect('/');
+          return;
+        });
+      })(req, res);
   },
   callback:function(req,res){
     passport.authenticate('facebook', { failureRedirect: '/login' });

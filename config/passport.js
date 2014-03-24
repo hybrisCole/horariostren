@@ -1,15 +1,55 @@
 var passport    = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy;
 
-passport.serializeUser(function(user, done) {
-  done(null, user[0].id);
+passport.serializeUser(function (user, done) {
+  done(null, user.uid);
 });
 
-passport.deserializeUser(function(id, done) {
-  //User.findById(id, function (err, user) {
-  //  done(err, user);
-  //});
+passport.deserializeUser(function (uid, done) {
+  User.findOne({uid: uid}).done(function (err, user) {
+    done(err, user)
+  });
 });
+
+
+var verifyHandler = function (token, tokenSecret, profile, done) {
+  process.nextTick(function () {
+
+    User.findOne({
+        or: [
+          {uid: parseInt(profile.id)},
+          {uid: profile.id}
+        ]
+      }
+    ).done(function (err, user) {
+        if (user) {
+          return done(null, user);
+        } else {
+
+          var data = {
+            provider: profile.provider,
+            uid: profile.id,
+            name: profile.displayName
+          };
+
+          if(profile.emails && profile.emails[0] && profile.emails[0].value) {
+            data.email = profile.emails[0].value;
+          }
+          if(profile.name && profile.name.givenName) {
+            data.fistname = profile.name.givenName;
+          }
+          if(profile.name && profile.name.familyName) {
+            data.lastname = profile.name.familyName;
+          }
+
+          User.create(data).done(function (err, user) {
+            return done(err, user);
+          });
+        }
+      });
+  });
+};
+
 
 // Use the FacebookStrategy within Passport.
 //   Strategies in Passport require a `verify` function, which accept
@@ -20,17 +60,7 @@ passport.use(new FacebookStrategy({
     clientSecret: '68705b87e81dc09abaf8abf17836dc38',
     callbackURL: "horarios-tren-data.nodejitsu.com/auth/facebook/callback"
   },
-  function(accessToken, refreshToken, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-
-      // To keep the example simple, the user's Facebook profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Facebook account with a user record in your database,
-      // and return that user instead.
-      return done(null, profile);
-    });
-  }
+  verifyHandler
 ));
 
 module.exports = {

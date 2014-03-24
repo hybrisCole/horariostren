@@ -7,9 +7,12 @@
  */
 
 module.exports = {
-  attributes: {
-    username  : { type: 'string', unique: true },
-    email     : { type: 'email',  unique: true },
-    passports : { collection: 'Passport', via: 'user' }
+  attributes	: {
+    provider: 'STRING',
+    uid: 'INTEGER',
+    name: 'STRING',
+    email: 'STRING',
+    firstname: 'STRING',
+    lastname: 'STRING'
   }
 };
