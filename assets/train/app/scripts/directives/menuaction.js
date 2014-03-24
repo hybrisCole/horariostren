@@ -3,7 +3,7 @@
 angular.module('sprintMobile')
   .directive('menuaction', ['$window','$document',function ($window, $document) {
     return {
-      templateUrl: '../partials/menu.html',
+      templateUrl: 'partials/menu.html',
       restrict: 'E',
       link: function(scope, element, attrs){
       	var innerH   = $window.innerHeight;
