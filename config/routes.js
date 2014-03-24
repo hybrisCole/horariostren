@@ -28,7 +28,7 @@
 
 module.exports.routes = {
   'get /auth/facebook': "AuthController.facebook",
-  'post /auth/facebook/callback': 'AuthController.callback',
+  'get /auth/facebook/callback': 'AuthController.callback',
   // By default, your root route (aka home page) points to a view
   // located at `views/home/index.ejs`
   // 
