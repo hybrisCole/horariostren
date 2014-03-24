@@ -32,10 +32,6 @@ module.exports = {
         });
       })(req, res);
   },
-  callback:function(req,res){
-    passport.authenticate('facebook', { failureRedirect: '/login' });
-    console.log(req);
-  },
 
 
   /**
