@@ -14,10 +14,18 @@
  *
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
-
+var passport = require("passport");
 module.exports = {
-    
-  
+
+  facebook:function(req,res){
+    passport.authenticate('facebook', { failureRedirect: '/login' },function(){
+      console.log('facebook');
+    });
+  },
+  callback:function(req,res){
+    passport.authenticate('facebook', { failureRedirect: '/login' });
+    console.log('callback');
+  },
 
 
   /**
