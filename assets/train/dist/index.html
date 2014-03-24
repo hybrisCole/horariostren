@@ -7,11 +7,18 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <script src="scripts/vendor/1a5317ff.modernizr.js"></script>
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
 
-        <link rel="stylesheet" href="styles/6e5c071e.pure.css">
+        <!-- build:css styles/pure.css -->
+        <link rel="stylesheet" href="bower_components/pure/pure-min.css">
+        <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css">
+        <!-- endbuild -->
 
-        <link rel="stylesheet" href="styles/cb2ab704.main.css">
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
 
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <div id="fb-root"></div>
@@ -40,9 +47,45 @@
     </div>
   </div>
   <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
-  <script src="scripts/9ee3468b.lib.js"></script>
+  <!-- build:js scripts/lib.js -->
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-gestures/gestures.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/Swipe/swipe.js"></script>
+  <script src="bower_components/videojs/dist/video-js/video.js"></script>
+  <script src="bower_components/BigVideo.js/lib/bigvideo.js"></script>
+  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+  <!-- endbuild -->
 
-  <script src="scripts/807c1b7a.scripts.js"></script>
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/MainController.js"></script>
+  <script src="scripts/controllers/IndexController.js"></script>
+  <script src="scripts/controllers/UserController.js"></script>
+  <script src="scripts/controllers/SwipeTestCtrl.js"></script>
+  <script src="scripts/controllers/MenuCtrl.js"></script>
+  <script src="scripts/controllers/PhoneListController.js"></script>
+  <script src="scripts/controllers/PhoneDetailController.js"></script>
+  <script src="scripts/controllers/ShoppingCartController.js"></script>
+  <script src="scripts/controllers/CheckoutController.js"></script>
+
+  <script src="scripts/services/PhoneFactory.js"></script>
+  <script src="scripts/services/TabletBundleFactory.js"></script>
+  <script src="scripts/services/ShoppingCartFactory.js"></script>
+  <script src="scripts/services/paradas.js"></script>
+
+  <script src="scripts/directives/swiper.js"></script>
+  <script src="scripts/directives/tileBuilder.js"></script>
+  <script src="scripts/directives/menuaction.js"></script>
+  <script src="scripts/directives/fullVideo.js"></script>
+  <script src="scripts/controllers/near.js"></script>
+  <script src="scripts/directives/fulldiv.js"></script>
+  <!-- endbuild -->
 
 </body>
 </html>

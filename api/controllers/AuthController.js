@@ -26,19 +26,15 @@ module.exports = {
             res.view('500');
             return;
           }
-
           res.redirect('/');
           return;
         });
       })(req, res);
   },
-
-
   /**
    * Overrides for the settings in `config/controllers.js`
    * (specific to AuthController)
    */
   _config: {}
-
   
 };
