@@ -18,7 +18,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new FacebookStrategy({
     clientID: '258394057673691',
     clientSecret: '68705b87e81dc09abaf8abf17836dc38',
-    callbackURL: "horarios-tren-data.nodejitsu.com/auth/callback"
+    callbackURL: "horarios-tren-data.nodejitsu.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
