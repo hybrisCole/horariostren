@@ -16,8 +16,5 @@
     "lodash": "~2.4.1",
     "angular-google-maps": "~1.0.15"
   },
-  "resolutions": {
-    "angular": "1.2.9"
-  },
   "devDependencies": {}
 }
