@@ -9,11 +9,8 @@
     "ejs": "0.8.4",
     "optimist": "0.3.4",
     "sails-mongo": "0.9.7",
-    "sails-generate-auth":"0.1.2",
     "passport":"0.2.0",
-    "passport-facebook":"1.0.3",
-    "validator":"3.5.0",
-    "bcrypt":"0.7.7"
+    "passport-facebook":"1.0.3"
   },
   "scripts": {
     "start": "node app.js",
