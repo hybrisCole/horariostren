@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sprintMobile')
-  .directive('menuaction', function ($window, $document) {
+  .directive('menuaction', ['$window','$document',function ($window, $document) {
     return {
       templateUrl: '../partials/menu.html',
       restrict: 'E',
@@ -52,4 +52,4 @@ angular.module('sprintMobile')
         }
       }
     };
-  });
+  }]);

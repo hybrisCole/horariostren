@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sprintMobile.services')
-  .factory('paradas', function ($q, $http) {
+  .factory('paradas', ['$q','$http',function ($q, $http) {
     return {
       getParadas: function () {
         var defer = $q.defer();
@@ -11,4 +11,4 @@ angular.module('sprintMobile.services')
         return defer.promise;
       }
     };
-  });
+  }]);

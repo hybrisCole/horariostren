@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('sprintMobile.controllers')
-  .controller('NearCtrl', function ($scope, $routeParams, Paradas, $window){
+  .controller('NearCtrl', ['$scope','$routeParams','Paradas','$window',function ($scope, $routeParams, Paradas, $window){
   	var currentId     = $routeParams.id;
   	var currentParada = _.where(Paradas, {'id':currentId});
 
@@ -34,4 +34,4 @@ angular.module('sprintMobile.controllers')
       console.log(position.coords.latitude); 
       console.log(position.coords.longitude); 
     }
-  });
+  }]);
