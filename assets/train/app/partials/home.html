@@ -35,7 +35,7 @@
                  placeholder="Search user"
                  class="form-control" >
         </div>
-          <div class="parada pure-u-1" ng-repeat="parada in paradas | filter:search">
+          <div class="parada pure-u-1" ng-repeat="parada in paradas | filter:search" ng-click="go('near/{{parada.id}}')">
             <p>{{parada.nombre}}</p>
           </div>
         </div> 

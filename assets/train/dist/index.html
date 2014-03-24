@@ -5,19 +5,28 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Sprint Prototype</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <script src="scripts/vendor/1a5317ff.modernizr.js"></script>
 
-        <link rel="stylesheet" href="styles/ecb2a387.pure.css">
+        <link rel="stylesheet" href="styles/6e5c071e.pure.css">
 
-        <link rel="stylesheet" href="styles/f9db2311.main.css">
+        <link rel="stylesheet" href="styles/cb2ab704.main.css">
 
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=726579990685955";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        </script>
 </head>
 <body ng-controller="MainCtrl" class="sprint-mobile-body">
-  <div class="menu-container" ng-include="'partials/menu.html'"></div>
-  <div ng-view="" ng-class="slideClass">
+  <menuaction></menuaction>   
+  <div ng-view="" ng-class="slideClass" class="main-cont" videojs="">
   </div>
   <div class="view-change-overlay" ng-show="displayViewChangeOverlay">
     <div class="view-change-spinner">
@@ -30,10 +39,10 @@
       </ul>
     </div>
   </div>
+  <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="scripts/9ee3468b.lib.js"></script>
 
-  <script src="scripts/84b7aa44.lib.js"></script>
-
-  <script src="scripts/8e9ca9d8.scripts.js"></script>
+  <script src="scripts/807c1b7a.scripts.js"></script>
 
 </body>
 </html>
