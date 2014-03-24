@@ -1,0 +1,106 @@
+.closest-sprint-store{
+  margin           : 0 -15px;
+  background-color : rgba(67,68,67,0.9);
+  padding          : 15px 0;
+  .pure-g{
+    padding : 0 10px; 
+    p{
+      color : #F2EFDC;
+      strong{
+        color : #bf4b4b;
+      }
+    }
+    a{
+      text-decoration : none; 
+    }
+    .close{
+      color        : #bf4b4b;
+      position     : absolute;  
+      right        : 0; 
+      margin-right : 20px;
+      font-weight  : bold; 
+    }
+    .like{
+      position     : absolute;  
+      right        : 0; 
+      margin-right : 65px; 
+    }
+  }
+}
+
+.closest-sprint-store-copy{
+  font-size:0.813em;
+  margin:0 0 0 30px;
+}
+
+.closest-sprint-store-copy-2{
+  font-size:0.813em;
+  margin:0 0 0 30px;
+}
+
+#store-location-icon{
+  float           : left;
+  width           : 20px;
+  height          : 33px;
+  background      : url('../images/locator_image.svg') no-repeat left top;
+  background-size : 20px 33px;
+  margin-top      : 10px;
+}
+ 
+.paradas{
+  width      : 100%;
+  margin-top : 20px; 
+  .list-cont{
+    background : #BF4B4B;
+    padding    : 0 10px ; 
+    max-height : 250px;
+    overflow-y : scroll;  
+  }
+  .main-parada{
+    background : #BF4B4B;
+    color      : #F2EFDC;
+    text-align : center;
+    cursor     : pointer;
+  }
+  .parada{
+    text-align : center;
+    cursor     : pointer;
+    background : #BF4B4B;
+    color      : #F2EFDC; 
+    border-top : solid #F2EFDC 1px;
+  } 
+}
+
+.list-cont{
+  @include transition(0.5s ease-in-out);
+  height : 250px;
+}
+
+.list-cont.ng-hide-add,
+.list-cont.ng-hide-remove {
+  display : block!important;
+}
+ 
+.list-cont.ng-hide{
+  height : 0px;
+}
+
+.closest-sprint-store{
+  @include transition(0.5s ease-in-out);
+  opacity  : 1;
+  height   : 60px;
+  overflow : hidden; 
+}
+
+.closest-sprint-store.ng-hide-add,
+.closest-sprint-store.ng-hide-remove {
+  display : block!important;
+}
+ 
+.closest-sprint-store.ng-hide{
+  height  : 0px;
+  opacity : 0;
+}
+
+//parada styles
+.cont-map{ padding-top : 50px; }

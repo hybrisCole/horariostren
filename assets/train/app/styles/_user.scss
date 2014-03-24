@@ -1,0 +1,316 @@
+.user-section-title{
+  font-size: 1.429em;
+  font-weight: 700;
+  margin:0;
+}
+
+.user-points{
+  margin: 0;
+  font-size: 1.875em;
+  font-weight: 400;
+  span{
+    font-size: 0.6em;
+    vertical-align: top;
+  }
+}
+
+.user-points-container{
+  margin: 25px 0;
+}
+.user-missions-container{
+  float:right;
+}
+.next-purchase{
+  margin:20px 0 0 0;
+  font-size: 0.750em;
+}
+
+.welcome-left{
+  border-right: 1px solid #bfbfbf;
+}
+
+#user-missions{
+  width:138px;
+  height:58px;
+  margin:0;
+  background: url('../images/user_missions.svg') no-repeat top left;
+  background-size: 138px 58px;
+}
+
+.user-missions-legend{
+  margin:0;
+  font-size: 0.750em;
+  font-weight: 700;
+}
+
+.go-to-dashboard{
+  margin:25px 0 0 0;
+  font-size: 0.867em;
+  font-weight: 400;
+  line-height: 1.8em;
+  float:right;
+  .gray-arrow-right{
+    margin-left:10px;
+  }
+}
+
+.billing-total{
+  font-size:1.875em;
+  font-weight: 400;
+  margin:25px 0 0 0;
+  line-height: 0.8em;
+}
+
+.billing-due{
+  font-weight: 400;
+  font-size:0.750em;
+  margin:10px 0 0 0;
+}
+.billing-due-date{
+  font-weight: 400;
+  margin:10px 0 0 0;
+  font-size:1.415em;
+}
+
+.user-sign-up-autopay{
+  border: solid 2px $sprint-yellow;
+  padding: 8px 10px;
+  margin:25px 0 0 5px;
+  max-width: 350px;
+}
+
+.autoplay-title{
+  margin:0;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+.autoplay-copy{
+  margin:10px 0 5px 0;
+  font-size:0.750em;
+  font-weight: 400;
+  line-height: 1.4em;
+}
+.billing-right-container{
+  float: right;
+}
+
+.user-missed-payment{
+  margin: 20px -15px;
+  background-color: #eee;
+}
+
+.close-x{
+  width:14px;
+  height:14px;
+  background: url('../images/x.svg') no-repeat top left;
+  background-size: 14px 14px;
+  margin:30px 15px 0;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.user-missed-payment-copy{
+  font-size:0.813em;
+  margin:15px 15px 15px 0;
+}
+
+.user-billing-details{
+  margin:25px 0;
+}
+
+.welcome-section{
+  margin-top:25px;
+}
+
+.billing-period-left{
+  font-size:0.750em;
+  margin:15px 0 0;
+}
+
+.usage-stats{
+  margin-top:15px;
+}
+
+.user-usage-stat-title{
+  font-size:0.750em;
+  font-weight: 700;
+  margin:0;
+  text-align: center;
+}
+
+#usage-stat-voice{
+  width: 124px;
+  height: 124px;
+  background: url('../images/voice_usage.svg') no-repeat top left;
+  background-size: 124px 124px;
+}
+
+#usage-stat-voice{
+  width: 124px;
+  height: 124px;
+  background: url('../images/voice_usage.svg') no-repeat top left;
+  background-size: 124px 124px;
+  margin:15px auto 0;
+}
+
+#usage-stat-data{
+  width: 124px;
+  height: 124px;
+  background: url('../images/data_usage.svg') no-repeat top left;
+  background-size: 124px 124px;
+  margin:15px auto 0;
+}
+
+.usage-stat-value{
+  font-size: 2.359em;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 30px;
+  line-height: 0.8em;
+}
+
+.usage-stat-left{
+  font-size:0.938em;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.user-usage-stat-left-container{
+  border-right: 1px solid #bfbfbf;
+}
+
+.usage-stat-sub{
+  font-size:0.750em;
+  color:#bcbbbb;
+  text-align: center;
+}
+
+.user-community{
+  margin: 0 0 40px 0;
+}
+
+.user-community-title{
+  font-size: 0.700em;
+  font-weight: 700;
+  text-align: center;
+  height: 30px;
+  margin: 0;
+  letter-spacing: -0.050em;
+}
+
+.user-community-options-container{
+  margin-top:25px;
+}
+
+.user-community-circle{
+  width: 80px;
+  height: 80px;
+  background-color: $sprint-yellow;
+  margin:15px auto 0;
+  @include border-radius(40px);
+}
+
+#wifi-community-logo{
+  width: 41px;
+  height: 56px;
+  background: url('../images/wifi_community.svg') no-repeat 0px 24px;
+  background-size: 41px 32px;
+  margin: 0 auto;
+}
+
+#voicemail-community-logo{
+  width: 42px;
+  height: 59px;
+  background: url('../images/voicemail_community.svg') no-repeat 2px 22px;
+  background-size: 42px 37px;
+  margin: 0 auto;
+}
+
+#turn-off-community-logo{
+  width: 35px;
+  height: 59px;
+  background: url('../images/turn_off_community.svg') no-repeat 0 22px;
+  background-size: 35px 35px;
+  margin: 0 auto;
+}
+
+#best-exercise-community-logo{
+  width: 40px;
+  height: 58px;
+  background: url('../images/community_exercise_icon.svg') no-repeat 0 16px;
+  background-size: 40px 42px;
+  margin: 0 auto;
+}
+
+#longer-batter-community-logo{
+  width: 43px;
+  height: 50px;
+  background: url('../images/community_battery.svg') no-repeat 0 30px;
+  background-size: 43px 20px;
+  margin: 0 auto;
+}
+
+
+#google-now-community-logo{
+  width: 37px;
+  height: 50px;
+  background: url('../images/community_google_now_icon.svg') no-repeat 0 23px;
+  background-size: 37px 27px;
+  margin: 0 auto;
+}
+.user-lower-section{
+  margin-top:40px;
+}
+.user-lower-left{
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.user-lower-right{
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.user-lower-black-dash{
+  height: 5px;
+  background-color: #000;
+  width:100%;
+  margin-bottom:20px;
+}
+
+.user-lower-title{
+  font-size:0.800em;
+  font-weight: 700;
+  margin:0 0 20px 0;
+}
+
+#user-phone-image{
+  width: 65px;
+  height: 182px;
+  background: url('../images/iphone4.jpg') no-repeat top left;
+  background-size: 65px 132px;
+  margin: 0 auto;
+}
+
+.user-lower-details-cta{
+  font-size:0.781em;
+  height: 25px;
+  vertical-align: middle;
+  line-height: 2em;
+  .gray-arrow-right{
+    margin-left:2px;
+  }
+}
+
+.user-lower-copy-title{
+  font-size:0.781em;
+  font-weight: 700;
+  margin:0;
+  line-height: 1.2em;
+}
+
+.user-lower-copy{
+  font-size:0.781em;
+  font-weight: 400;
+  margin:0;
+  line-height: 1.2em;
+}

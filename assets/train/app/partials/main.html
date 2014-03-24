@@ -1,0 +1,79 @@
+<div class="topcoat-grid">
+  <header class="topcoat-navigation-bar topcoat-grid__row">
+    <div class="topcoat-navigation-bar__item topcoat-grid__column--auto">
+      <button class="topcoat-icon-button--quiet" ng-click="go('/swipeTest')">
+        <span class="topcoat-icon icomatic">listview</span>
+      </button>
+    </div>
+    <div class="topcoat-navigation-bar__item topcoat-grid__column--auto center">
+      <h1 class="topcoat-navigation-bar__title">Sprint Logo</h1>
+    </div>
+    <div class="topcoat-navigation-bar__item topcoat-grid__column--auto right">
+      <button class="topcoat-icon-button--quiet" ng-click="go('/swipeTest')">
+        <span class="topcoat-icon icomatic">user</span>
+      </button>
+    </div>
+  </header>
+  <div class="topcoat-list list">
+    <ul class="topcoat-list__container">
+      <li class="topcoat-list__item">
+        <div class="topcoat-grid">
+          <div class="topcoat-grid__row">
+            <div class="topcoat-grid__column--auto center">
+              <h2>"I switched from AT&T to Sprint and couldn't be happier with my decision!"</h2>
+            </div>
+          </div>
+          <div class="topcoat-grid__row">
+            <div class="topcoat-grid__column--auto left">
+              <p>- Joan from Illinois</p>
+            </div>
+            <div class="topcoat-grid__column--auto center right">
+              <button class="topcoat-icon-button--quiet" ng-click="go('/swipeTest')">
+                Why Sprint?
+                <span class="icomatic">next</span>
+              </button>
+            </div>
+          </div>
+          <div class="topcoat-grid__row">
+            <div class="topcoat-grid__column--auto left">
+              <p>Sprint Deals</p>
+            </div>
+            <div class="topcoat-grid__column--auto center right">
+
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="topcoat-list__item">
+        <div class="topcoat-grid">
+          <div class="topcoat-grid__row">
+            <div class="topcoat-grid__column--auto">
+              <h3>Phones</h3>
+              <p>See all</p>
+            </div>
+          </div>
+          <div class="topcoat-grid__row">
+            <div class="topcoat-grid__column--auto">
+              <div swiper model-info="phoneCategories" template="templates/phoneCategoriesTemplate.html"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="topcoat-list__item">
+        <div class="topcoat-grid">
+          <div class="topcoat-grid__row">
+            <div class="topcoat-grid__column--auto">
+              <h3>Tablets and Bundles</h3>
+              <p>See all</p>
+            </div>
+          </div>
+          <div class="topcoat-grid__row">
+            <div class="topcoat-grid__column--auto">
+              <div swiper model-info="tabletBundleCategories" template="templates/tabletBundleCategoriesTemplate.html"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

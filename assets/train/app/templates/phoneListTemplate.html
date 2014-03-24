@@ -1,0 +1,24 @@
+<div class="phones-tile">
+  <div class="product-item" ng-repeat="model in modelInfoData">
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <img ng-src="images/{{model.photo.path}}" width="{{model.photo.width}}" height="{{model.photo.height}}"/>
+      </div>
+      <div class="pure-u-1-2">
+        <h3 class="product-title">{{model.name}}</h3>
+        <div class="product-ranking">
+          <div class="pure-g">
+            <div class="pure-u-1">
+              <div ng-repeat="i in [1,2,3,4,5]" class="star-container" ng-class="{true:'star-off',false:'star-on'}[model.stars < i]" ></div>
+              <div class="star-container comments">({{model.comments}})</div>
+            </div>
+          </div>
+        </div>
+        <div class="product-price">${{model.price}}.<span>00</span></div>
+
+        <div class="product-view" ng-click="goToPhone({{model.id}})">View phone <span class="gray-arrow-right"></span></div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+  </div>
+</div>

@@ -1,0 +1,208 @@
+<div class="content">
+  <div class="sprint-content">
+    <div class="checkout-container">
+      <div class="pure-g">
+        <div class="pure-u-3-5">
+          <h3 class="checkout-section-title">Shopping Cart</h3>
+        </div>
+        <div class="pure-u-2-5">
+          <div class="checkout-save-cart">
+            Save Cart <span class="checkout-icon-mail"></span>
+          </div>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div class="checkout-main-copy">Final pricing will appear after selecting a plan<br>and services.</div>
+        </div>
+      </div>
+      <div class="pure-g gray-text checkout-container">
+        <div class="pure-u-1-2">
+          <h3 class="checkout-section-title">Device</h3>
+        </div>
+        <div class="pure-u-1-2">
+          <h3 class="checkout-section-price">$99.00</h3>
+        </div>
+      </div>
+      <div class="pure-g gray-text checkout-container">
+        <div class="pure-u-4-5">
+          <div class="checkout-device-name">Apple iPhone 5c (Blue)</div>
+          <div class="checkout-device-copy">Activation fee of $35.00 charged to next bill</div>
+        </div>
+        <div class="pure-u-1-5">
+          <div class="checkout-option-edit" ng-click="goBack('/shoppingCart')">Edit</div>
+        </div>
+      </div>
+      <div class="grey-dash"></div>
+      <div class="checkout-select-plan-container">
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <h3 class="checkout-section-title" ng-class="{'gray-text':!planSectionActive}">Select Plan</h3>
+          </div>
+          <div class="pure-u-1-2">
+            <h3 class="checkout-section-price" ng-class="{'gray-text':!planSectionActive}">{{selectedPlan.price | currency}}</h3>
+          </div>
+        </div>
+        <div class="checkout-option-list" ng-show="planSectionActive">
+          <div class="pure-g checkout-option-container" ng-repeat="plan in plans" ng-click="selectPlan($index)">
+            <div class="pure-u-17-24">
+              <div class="pure-g">
+                <div class="pure-u-1-6">
+                  <div ng-class="{true:'checkout-circle-selected',false:'checkout-circle-unselected'}[plan.value]"></div>
+                </div>
+                <div class="pure-u-5-6">
+                  <div class="checkout-option-title">{{plan.title}}</div>
+                  <div class="checkout-option-copy">{{plan.copy}}</div>
+                  <div class="checkout-option-copy">Plan, details and pricing <span class="gray-arrow-right"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="pure-u-7-24">
+              <div class="checkout-option-price">{{plan.price | currency}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-option-list" ng-show="!planSectionActive && selectedPlan" ng-class="{'gray-text':!planSectionActive}">
+          <div class="pure-g">
+            <div class="pure-u-3-5">
+              <div class="pure-g">
+                <div class="pure-u-1">
+                  <div class="checkout-option-title">{{selectedPlan.title}}</div>
+                  <div class="checkout-option-copy">{{selectedPlan.copy}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="pure-u-2-5">
+              <div class="checkout-option-edit" ng-click="activatePlanSection()">Edit</div>
+            </div>
+          </div>
+        </div>
+        <div class="grey-dash"></div>
+        <div class="pure-g checkout-container">
+          <div class="pure-u-1-2">
+            <h3 class="checkout-section-title" ng-class="{'gray-text':!serviceSectionActive, 'inactive-lower-margin':!selectedService}">Services</h3>
+          </div>
+          <div class="pure-u-1-2">
+            <h3 class="checkout-section-price" ng-class="{'gray-text':!serviceSectionActive}">{{selectedService.price | currency}}</h3>
+          </div>
+        </div>
+        <div class="checkout-option-list" ng-show="serviceSectionActive">
+          <div class="pure-g checkout-option-container" ng-repeat="service in services" ng-click="selectService($index)">
+            <div class="pure-u-17-24">
+              <div class="pure-g">
+                <div class="pure-u-1-6">
+                  <div ng-class="{true:'checkout-circle-selected',false:'checkout-circle-unselected'}[service.value]"></div>
+                </div>
+                <div class="pure-u-5-6">
+                  <div class="checkout-option-title">{{service.title}}</div>
+                  <div class="checkout-option-copy">{{service.copy}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="pure-u-7-24">
+              <div class="checkout-option-price">{{service.price | currency}}<span class="checkout-option-period-time">/mo</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-option-list" ng-show="!serviceSectionActive && selectedService" ng-class="{'gray-text':!serviceSectionActive}">
+          <div class="pure-g">
+            <div class="pure-u-4-5">
+              <div class="pure-g">
+                <div class="pure-u-1">
+                  <div class="checkout-option-title">{{selectedService.title}}</div>
+                  <div class="checkout-option-copy">{{selectedService.copy}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="pure-u-1-5">
+              <div class="checkout-option-edit" ng-click="activateServiceSection()">Edit</div>
+            </div>
+          </div>
+        </div>
+        <div class="grey-dash"></div>
+        <div class="pure-g checkout-container">
+          <div class="pure-u-1-2">
+            <h3 class="checkout-section-title" ng-class="{'gray-text':!numberSectionActive, 'inactive-lower-margin':!selectedNumber}">Number</h3>
+          </div>
+          <div class="pure-u-1-2">
+            <h3 class="checkout-section-price" ng-show="!numberSectionActive && selectedNumber" ng-class="{'gray-text':!numberSectionActive}">555-123-4567</h3>
+          </div>
+        </div>
+        <div class="checkout-option-list" ng-show="numberSectionActive">
+          <div class="pure-g checkout-option-container" ng-repeat="number in numbers" ng-click="selectNumber($index)">
+            <div class="pure-u-1">
+              <div class="pure-g">
+                <div class="pure-u-1-6">
+                  <div ng-class="{true:'checkout-circle-selected',false:'checkout-circle-unselected'}[number.value]"></div>
+                </div>
+                <div class="pure-u-5-6">
+                  <div class="checkout-option-title">{{number.title}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-option-list" ng-show="!numberSectionActive && selectedNumber" ng-class="{'gray-text':!numberSectionActive}">
+          <div class="pure-g">
+            <div class="pure-u-4-5">
+              <div class="pure-g">
+                <div class="pure-u-1">
+                  <div class="checkout-option-title">{{selectedNumber.title}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="pure-u-1-5">
+              <div class="checkout-option-edit" ng-click="activateNumberSection()">Edit</div>
+            </div>
+          </div>
+        </div>
+        <div class="grey-dash"></div>
+        <div class="checkout-select-plan-container">
+          <div class="pure-g">
+            <div class="pure-u-1">
+              <h3 class="checkout-section-title" ng-class="{'gray-text':!billingPaymentSectionActive,'inactive-lower-margin':!billingPaymentSectionActive}">Billing & Payment</h3>
+            </div>
+          </div>
+          <div ng-show="billingPaymentSectionActive">
+            <div class="pure-g checkout-billing-and-payment">
+              <div class="pure-u-1-2">
+                <div class="checkout-option-title">Due Today:</div>
+                <div class="checkout-section-title">$99.00</div>
+              </div>
+              <div class="pure-u-1-2">
+                <div class="checkout-option-title">Monthly:</div>
+                <div class="checkout-section-title">$110.00</div>
+              </div>
+            </div>
+            <div class="pure-g checkout-btn-container">
+              <div class="pure-u-1">
+                <a href="javascript:void(0);" class="black-and-yellow-button">Checkout With Amazon</a>
+              </div>
+            </div>
+            <div class="pure-g checkout-btn-container">
+              <div class="pure-u-1">
+                <a href="javascript:void(0);" class="black-and-yellow-button">Pay With Paypal</a>
+              </div>
+            </div>
+            <div class="pure-g shopping-cart-continue-shopping">
+              <div class="pure-u-2-5">
+                <div class="grey-dash"></div>
+              </div>
+              <div class="pure-u-1-5">
+                <div class="shopping-cart-continue-shopping-title">Or</div>
+              </div>
+              <div class="pure-u-2-5">
+                <div class="grey-dash"></div>
+              </div>
+            </div>
+            <div class="pure-g checkout-btn-container">
+              <div class="pure-u-1">
+                <a href="javascript:void(0);" class="gray-and-black-button">Pay With Credit Card <span class="credit-card-icon"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

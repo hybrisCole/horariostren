@@ -1,0 +1,164 @@
+<div class="content">
+  <div class="sprint-content">
+    <div class="phone-detail-container">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <h3 class="product-detail-section-title">Apple iPhone 5c 32GBs</h3>
+        </div>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="product-detail-container-left">
+          <img src="images/product_detail_iphone5c.jpg" width="142" height="268" />
+          <div class="pure-g circles-container">
+            <div class="pure-u-1">
+              <div class="black-line-circle" style="margin-top:0;">
+                <div class="three-six-view">360°</div>
+                <div class="three-six-view-copy">VIEW</div>
+              </div>
+            </div>
+            <!-- <div class="pure-u-1-2">
+              <div class="black-line-circle">
+                <img src="images/triangle_right.svg" width="25" height="25" />
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="product-detail-container-right">
+          <div class="product-detail-price">$0.<span>00</span></div>
+          <div class="product-ranking">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <div class="star-container star-on"></div>
+                <div class="star-container star-on"></div>
+                <div class="star-container star-on"></div>
+                <div class="star-container star-off"></div>
+                <div class="star-container star-off"></div>
+                <div class="star-container comments">(8)</div>
+              </div>
+            </div>
+          </div>
+          <p class="product-detail-copy">A5 Chip for faster <br /><strong>performance</strong></p>
+          <p class="product-detail-copy">B-mega pixel camera to<br />capture your life in<br /><strong>Chicago</strong></p>
+          <p class="product-detail-copy">iOS7 - mobile most <strong>advanced OS</strong></p>
+          <p class="product-detail-copy">1080p HD recorder to <br /> <strong>capture your life</strong></p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="grey-dash color-selection-separator"></div>
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <img src="images/product_detail_iphone5_color_green.jpg" width="290" height="184"/>
+      </div>
+    </div> -->
+    <div class="grey-dash type-selection-separator"></div>
+    <div class="pure-g product-detail-quantity-container">
+      <div class="pure-u-1-2">
+        <div class="product-detail-container-left">
+          <div class="pure-g">
+            <div class="pure-u-1-4">
+              <div class="product-detail-type-title">Size:</div>
+            </div>
+            <div class="pure-u-3-4">
+              <div class="pure-g">
+                <div class="pure-u-1-2" ng-click="setCapacity(true);">
+                  <div class="black-line-circle" ng-class="capacity16 ? 'black-line-circle' : 'square-size-item'">
+                    <div class="product-detail-type-size">16GB</div>
+                  </div>
+                </div>
+                <div class="pure-u-1-2" ng-click="setCapacity(false);">
+                  <div class="black-line-circle" ng-class="!capacity16 ? 'black-line-circle' : 'square-size-item'">
+                    <div class="product-detail-type-size">32GB</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="product-detail-container-right">
+          <div class="pure-g">
+            <div class="pure-u-1-2">
+              <div class="product-detail-type-title">Quantity:</div>
+            </div>
+            <div class="pure-u-1-2">
+              <div class="product-detail-arrow-up" ng-click="addOneProduct()"></div>
+              <div class="product-detail-current-quantity">{{productDetail.quantity}}</div>
+              <div class="product-detail-arrow-down" ng-click="lessOneProduct()"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="product-detail-store-buttons">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <a href="javascript:void(0);" ng-click="go('/shoppingCart')" class="black-and-yellow-button">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-detail-store-location">
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="product-detail-type-size" style="text-align:left;">Reserve in Store <span class="gray-arrow-right"></span></div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="pure-g" style="margin-top:10px;">
+            <div class="pure-u-1-6">
+              <div id="store-location-icon"></div>
+            </div>
+            <div class="pure-u-5-6">
+              <div class="product-detail-store-location-copy">180 N Lasalle</div>
+              <div class="product-detail-store-location-copy">Chicago, IL 60601</div>
+              <div class="product-detail-store-change-store">Change Store</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="grey-dash"></div>
+    <div class="product-detail-lower-menu">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div class="product-detail-lower-menu-options-container">
+            <div class="pure-g">
+              <div class="pure-u-1">
+                <a href="javascript:void(0);" class="gray-and-white-button">Compare</a>
+                <a href="javascript:void(0);" class="gray-and-white-button">Reviews</a>
+                <a href="javascript:void(0);" class="gray-and-white-button">Features</a>
+                <a href="javascript:void(0);" class="gray-and-white-button">Pricing Breakdown</a>
+                <a href="javascript:void(0);" class="gray-and-white-button">Sprint One Up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grey-dash"></div>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div class="product-detail-lower-menu-social-container">
+            <div class="product-detail-social-copy">Need help making a decision? Share with your friends</div>
+            <div class="pure-g">
+              <div class="pure-u-1-2">
+                <a href="#" class="product-detail-facebook-button">
+                  <div class="product-detail-facebook-logo"></div>
+                  Share on Facebook</a>
+              </div>
+              <div class="pure-u-1-2">
+                <a href="#" class="product-detail-twitter-button">
+                  <div class="product-detail-twitter-logo"></div>
+                  Share on Twitter</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

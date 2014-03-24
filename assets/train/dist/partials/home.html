@@ -1,0 +1,179 @@
+<div class="content">
+  <div class="sprint-content">
+    <div class="closest-sprint-store" ng-show="showClosestSprintStore">
+      <div class="pure-g">
+        <div class="pure-u-1-6" ng-click="closeSprintStoreLocation()">
+          <div class="close-x"></div>
+        </div>
+        <div class="pure-u-5-6">
+          <div class="pure-g">
+            <div class="pure-u-1">
+              <p class="closest-sprint-store-copy">
+                <strong>Closest Sprint Store</strong>
+              </p>
+            </div>
+          </div>
+          <div class="pure-g">
+            <div class="pure-u-1-8">
+              <div id="store-location-icon"></div>
+            </div>
+            <div class="pure-u-7-8">
+              <p class="closest-sprint-store-copy-2">180N. LaSalle Chicago, IL 60601</p>
+              <p class="closest-sprint-store-copy-2">Open today: 9AM - 8PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="search-label-home">Search</div>
+      </div>
+      <div class="pure-u-1-2">
+
+      </div>
+      <div class="pure-u-1-4">
+        <div id="search-icon-top" class="sprint-search-icon"></div>
+      </div>
+    </div>
+    <div class="dash-home-search">
+      <div class="black-dash"></div>
+    </div>
+    <div class="home-testimonial">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <p class="testimonial-copy">
+            &#8220;I switched from AT&#38;T to Sprint and <br> couldn't be happier with my decision!&#8221;
+          </p>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-3-5">
+          <p class="testimonial-who">- Joan from Kansas City</p>
+        </div>
+        <div class="pure-u-2-5">
+          <p class="testimonial-why">Why Sprint <span class="yellow-arrow-right"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="home-deals">
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <h3 class="home-section-title">Sprint Deals</h3>
+        </div>
+        <div class="pure-u-1-2">
+          <p class="deals-check-them">Check them out <span class="gray-arrow-right"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="home-phones">
+      <div class="pure-g">
+        <div class="pure-u-1 home-title-container" ng-click="go('/phoneList')">
+          <h3 class="home-section-title">Phones</h3>
+          <span class="home-section-sub gray-sprint">See all</span>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div tile-builder="" item-class="phone-cat-item" model-info="phoneCategories" template="templates/itemsVerticalTemplate.html"></div>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="home-plans">
+      <div class="pure-g">
+        <div class="pure-u-1 home-title-container">
+          <h3 class="home-section-title">Plans</h3>
+          <span class="home-section-sub gray-sprint">See all</span>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div class="items-container">
+            <div class="items-tile-plans">
+              <div class="item-data all-in">
+                <div class="pure-g">
+                  <div class="pure-u-2-5">
+                    <div class="plan-yellow-bubble">
+                      <p class="sub-bubble-top">As low as</p>
+                      <p class="main-bubble">$25</p>
+                      <p class="sub-bubble">Per Month</p>
+                    </div>
+                  </div>
+                  <div class="pure-u-3-5">
+                    <div class="right-plan-container">
+                      <p class="plans-data-title">Sprint Framily Plan</p>
+                      <p class="plans-data-copy">The more people added, the lower your rate</p>
+                      <p class="plans-data-details">Plan Details <span class="gray-arrow-right"></span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-data yellow-bubble-container">
+                <div class="pure-g">
+                  <div class="pure-u-1">
+                    <div class="right-plan-container">
+                      <div class="plan-yellow-bubble">
+                        <p class="main-bubble main-bubble-top">Data <br>Plans</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="item-data yellow-bubble-container">
+                <div class="pure-g">
+                  <div class="pure-u-1">
+                    <div class="left-plan-container">
+                      <div class="plan-yellow-bubble">
+                        <p class="main-bubble main-bubble-top">Compare <br>w AT&T</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="table-bundle-plans">
+      <div class="pure-g">
+        <div class="pure-u-1 home-title-container">
+          <h3 class="home-section-title">Tablets & Bundles</h3>
+          <span class="home-section-sub gray-sprint">See all</span>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div tile-builder="" item-class="bundle-cat-item" model-info="tabletBundleCategories" template="templates/itemsVerticalTemplate.html"></div>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="iphone-accesories-plans">
+      <div class="pure-g">
+        <div class="pure-u-1 home-title-container">
+          <h3 class="home-section-title">iPhone Accessories</h3>
+          <span class="home-section-sub gray-sprint">See all</span>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div tile-builder="" item-class="iphone-acc-item" model-info="iPhoneAccessories" template="templates/itemsVerticalTemplate.html"></div>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="iphone-accesories-plans">
+      <div class="pure-g">
+        <div class="pure-u-1 home-title-container">
+          <h3 class="home-section-title">Wi-Fi Hotspots <br> & Data Cards</h3>
+          <span class="home-section-sub gray-sprint">See all</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

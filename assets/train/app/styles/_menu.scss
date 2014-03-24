@@ -1,0 +1,160 @@
+.pure-menu.pure-menu-open.sprint-header{
+  border           : 0;
+  background-color : $sprint-yellow;
+  .menu-content{
+    margin : 0px 15px;
+    height : 100%; 
+  }
+}
+
+.menu-options{
+  width      : 100%; 
+  background : #444344;
+  position   : fixed;
+  z-index    : -9;  
+}
+
+.menu-here{
+  width      : 100%;
+  position   : fixed;
+  z-index    : -9;
+}
+
+#menu-options-grid{
+  margin :20px 0;
+}
+
+#menu-icon{
+  width  : 38px;
+  margin : 15px 0 0 0;
+  .menu-line{
+    background     : #bf4b4b;
+    width          : 38px;
+    height         : 3px;
+    margin-bottom  : 5px;     
+  }
+}
+
+.rotated-icon{
+  @include transform(rotate(180deg));
+}
+
+.sprint-logo{
+  font-family     : $vincent;
+  font-size       : 24px; 
+  width           : 100%; 
+  display         : block;
+  span{
+    color : #007993;
+  }
+  p{
+    text-align : center; 
+    color      : #bf4b4b;
+    margin     : 14px 0;
+  } 
+}
+
+#sign-in-logo{
+  width           : 30px;
+  height          : 33px;
+  background      : url('../images/settings.svg') no-repeat top left;
+  background-size : 30px 33px;
+  display         : inline-block;
+  margin-top      : 8px; 
+}
+.sprint-log-in{
+  margin:5px 5px 0;
+  display:inline-block;
+  font-size: 0.680em;
+  font-weight: 700;
+  vertical-align: top;
+}
+.login-container{
+  float:right;
+  display:block;
+}
+
+.nav-legend{
+  padding: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.8em;
+  margin: 10px 0 10px 0;
+  letter-spacing: -0.076em;
+}
+
+
+#search-icon-top{
+margin:15px 0 0 0;
+}
+.sprint-search-icon{
+  width: 20px;
+  height: 20px;
+  display:block;
+  float:right;
+  background: url('../images/search_icon.svg') no-repeat top left;
+  background-size: 20px 20px;
+}
+
+.nav-icon{
+  margin:10px auto 0;
+  display: block;
+  height: 35px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+.nav-box{
+  border-right: 1px solid #000;
+  overflow:auto;
+}
+
+.nav-box.no-border{
+  border-right:none;
+}
+
+#phones-icon{
+  width:15px;
+  background-image: url('../images/phones_icon.svg');
+  background-size: 15px 31px;
+}
+
+#plans-icon{
+  width:28px;
+  background-image: url('../images/plans_icon.svg');
+  background-size: 28px 31px;
+}
+
+#tablets-icon{
+  width:23px;
+  background-image: url('../images/tablets_icon.svg');
+  background-size: 23px 31px;
+}
+
+#accessories-icon{
+  width:26px;
+  background-image: url('../images/accesories_icon.svg');
+  background-size: 26px 31px;
+}
+
+#hotspots-icon{
+  width:32px;
+  background-image: url('../images/hotspots_icon.svg');
+  background-size: 32px 28px;
+}
+
+#network-icon{
+  width:24px;
+  background-image: url('../images/network_icon.svg');
+  background-size: 24px 28px;
+}
+#find-store-icon{
+  width:23px;
+  background-image: url('../images/find_store_icon.svg');
+  background-size: 23px 27px;
+}
+#support-icon{
+  width:32px;
+  background-image: url('../images/support_icon.svg');
+  background-size: 32px 29px;
+}

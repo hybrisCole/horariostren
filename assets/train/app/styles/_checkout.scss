@@ -1,0 +1,135 @@
+.checkout-container{
+  margin-top:15px;
+}
+
+.checkout-section-title {
+  font-size: 1.429em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.checkout-save-cart{
+  font-size: 0.680em;
+  font-weight: 700;
+  float:right;
+}
+
+
+.checkout-icon-mail{
+  width:27px;
+  height:17px;
+  background: url('../images/mail_icon.svg') no-repeat top left;
+  background-size: 27px 17px;
+  display:inline-block;
+  vertical-align: bottom;
+}
+
+.checkout-main-copy{
+  font-size:0.866em;
+  font-weight: 400;
+  margin-top:10px;
+}
+
+.checkout-section-price{
+  font-size:1.162em;
+  font-weight: 400;
+  float:right;
+  margin:0;
+}
+
+.checkout-option-edit{
+  font-size:1.162em;
+  font-weight: 400;
+  float:right;
+  margin:0;
+  color:#000;
+  font-weight: 700;
+}
+.checkout-option-period-time{
+  font-size:0.625em;
+}
+.gray-text{
+  color:#b4b4b4;
+}
+
+.checkout-device-name{
+  font-size:0.867em;
+  font-weight: 700;
+}
+
+.checkout-device-copy{
+  font-size:0.867em;
+  font-weight: 400;
+  margin-bottom:25px;
+}
+
+.checkout-select-plan-container{
+  margin-top:25px
+}
+
+.checkout-circle-selected{
+  width: 20px;
+  height: 20px;
+  @include border-radius(10px);
+  background-color: #000;
+}
+
+.checkout-circle-unselected{
+  width: 16px;
+  height: 16px;
+  border:2px solid #000;
+  @include border-radius(10px);
+}
+
+.checkout-option-title{
+  font-size: 1.162em;
+  letter-spacing: -0.045em;
+}
+
+.checkout-option-container{
+  margin-top:15px;
+}
+
+.checkout-option-copy{
+  font-size:0.810em;
+  letter-spacing: -0.045em;
+  margin-top:5px;
+  .gray-arrow-right{
+    vertical-align: middle;
+  }
+}
+
+.double-yellow-arrow{
+  color:$sprint-yellow;
+  margin-left:5px;
+  letter-spacing: 0.2em;
+}
+
+.checkout-option-list{
+  margin-bottom: 25px;
+}
+
+.checkout-billing-and-payment{
+  margin:45px 0;
+  .checkout-option-title,.checkout-section-title{
+    text-align: center;
+  }
+}
+
+.checkout-btn-container{
+  margin-bottom:10px;
+}
+
+.credit-card-icon{
+  width:40px;
+  height:25px;
+  background: url('../images/credit_card_icon.svg') no-repeat top left;
+  background-size: 40px 25px;
+  display:inline-block;
+  vertical-align: bottom;
+  margin-left:10px;
+}
+
+.inactive-lower-margin{
+  margin-bottom:15px;
+}

@@ -1,0 +1,84 @@
+<div ng-controller="MenuCtrl" class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal sprint-header">
+  <div class="menu-content">
+    <div class="nav-icons-container" ng-show="navOpen">
+      <div class="pure-g sprint-menu-options-search">
+        <div class="pure-u-1-4">
+          <div class="search-label">Search</div>
+        </div>
+        <div class="pure-u-1-2">
+
+        </div>
+        <div class="pure-u-1-4">
+          <div id="search-icon-top" class="sprint-search-icon"></div>
+        </div>
+      </div>
+      <div class="black-dash"></div>
+      <div id="menu-options-grid">
+        <div class="pure-g nav-icon-row">
+          <div class="pure-u-1-4">
+            <div class="nav-box" ng-click="navOpen = false;go('/phoneList')">
+              <div id="phones-icon" class="nav-icon"></div>
+              <p class="nav-legend">Phones</p>
+            </div>
+          </div>
+          <div class="pure-u-1-4">
+            <div class="nav-box">
+              <div id="plans-icon" class="nav-icon"></div>
+              <p class="nav-legend">Plans</p>
+            </div>
+          </div>
+          <div class="pure-u-1-4">
+            <div class="nav-box">
+              <div id="tablets-icon" class="nav-icon"></div>
+              <p class="nav-legend">Tablets</p>
+            </div>
+          </div>
+          <div class="pure-u-1-4">
+            <div class="nav-box no-border">
+              <div id="accessories-icon" class="nav-icon"></div>
+              <p class="nav-legend">Accessories</p>
+            </div>
+          </div>
+        </div>
+        <div class="black-dash"></div>
+        <div class="pure-g nav-icon-row">
+          <div class="pure-u-1-4">
+            <div class="nav-box">
+              <div id="hotspots-icon" class="nav-icon"></div>
+              <p class="nav-legend">Hotspots</p>
+            </div>
+          </div>
+          <div class="pure-u-1-4">
+            <div class="nav-box">
+              <div id="network-icon" class="nav-icon"></div>
+              <p class="nav-legend">Network</p>
+            </div>
+          </div>
+          <div class="pure-u-1-4">
+            <div class="nav-box">
+              <div id="find-store-icon" class="nav-icon"></div>
+              <p class="nav-legend">Find Store</p>
+            </div>
+          </div>
+          <div class="pure-u-1-4">
+            <div class="nav-box no-border">
+              <div id="support-icon" class="nav-icon"></div>
+              <p class="nav-legend">Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="black-dash"></div>
+    </div>
+    <div class="pure-g nav-icon-row">
+      <div class="pure-u-1-4"><div id="menu-icon" ng-click="menuClick()" ng-class="{'rotated-icon':navOpen}"></div></div>
+      <div class="pure-u-1-2"><div class="sprint-logo" ng-click="navOpen = false;goBack('/')"></div></div>
+      <div class="pure-u-1-4">
+        <div class="login-container" ng-click="navOpen = false;go('/user')">
+          <div class="sprint-log-in">Sign In</div>
+          <div id="sign-in-logo"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

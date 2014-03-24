@@ -1,0 +1,231 @@
+<div class="content">
+  <div class="sprint-content">
+    <div class="welcome-section">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <h3 class="user-section-title">Hey John! <br> Welcome back</h3>
+        </div>
+      </div>
+    </div>
+    <div class="user-billing-details">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <h3 class="user-section-title">Billing Details</h3>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-5-12">
+          <p class="billing-total">$110.00</p>
+          <p class="billing-due">is due on</p>
+          <p class="billing-due-date">12/18/13</p>
+        </div>
+        <div class="pure-u-7-12">
+          <div class="billing-right-container">
+            <div class="user-sign-up-autopay">
+              <p class="autoplay-title">Sign-up for AutoPay</p>
+              <p class="autoplay-copy">Sign up today and <br> receive 100 points</p>
+            </div>
+            <div class="go-to-dashboard">Go to dashboard <span class="gray-arrow-right"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="user-missed-payment" ng-show="missedPayment[0]">
+      <div class="pure-g">
+        <div class="pure-u-1-6" ng-click="closeMissedPayment(0)">
+          <div class="close-x"></div>
+        </div>
+        <div class="pure-u-5-6">
+          <p class="user-missed-payment-copy">
+            You missed you last payment. Sprint can help you pay on time with AutoPay. <br>
+            <strong>Learn More</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="user-usage">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <h3 class="user-section-title">Usage</h3>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <p class="billing-period-left"><strong>18 days</strong> left this billing period</p>
+        </div>
+      </div>
+      <div class="pure-g usage-stats">
+        <div class="pure-u-1-2">
+          <div class="user-usage-stat-left-container">
+            <p class="user-usage-stat-title">Voice usage</p>
+            <div id="usage-stat-voice">
+              <div class="usage-stat-value">105</div>
+              <div class="usage-stat-left">minutes <br> left</div>
+            </div>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <p class="user-usage-stat-title">Data usage</p>
+          <div id="usage-stat-data">
+            <div class="usage-stat-value">1.4G</div>
+            <div class="usage-stat-left">left</div>
+          </div>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <p class="usage-stat-sub">of 500 minutes</p>
+        </div>
+        <div class="pure-u-1-2">
+          <p class="usage-stat-sub">of 4GB</p>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <div class="go-to-dashboard">View all usage <span class="gray-arrow-right"></span></div>
+        </div>
+      </div>
+      <div class="user-missed-payment" ng-show="missedPayment[1]">
+        <div class="pure-g">
+          <div class="pure-u-1-6" ng-click="closeMissedPayment(1)">
+            <div class="close-x"></div>
+          </div>
+          <div class="pure-u-5-6">
+            <p class="user-missed-payment-copy">
+              You missed you last payment. Sprint can help you pay on time with AutoPay. <br>
+              <strong>Learn More</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="user-community">
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <h3 class="user-section-title">Community Tips</h3>
+        </div>
+      </div>
+      <div class="pure-g user-community-options-container">
+        <div class="pure-u-1-3">
+          <p class="user-community-title">Best <br>Excersice App</p>
+          <div class="user-community-circle">
+            <div id="best-exercise-community-logo"></div>
+          </div>
+        </div>
+        <div class="pure-u-1-3">
+          <p class="user-community-title">Longer <br>Battery Time </p>
+          <div class="user-community-circle">
+            <div id="longer-batter-community-logo"></div>
+          </div>
+        </div>
+        <div class="pure-u-1-3">
+          <p class="user-community-title">Getting Started <br> With Google Now</p>
+          <div class="user-community-circle">
+            <div id="google-now-community-logo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="user-points-container">
+      <div class="pure-g">
+        <div class="pure-u-5-12">
+          <div class="welcome-left">
+            <p class="user-points">250<span>pts</span></p>
+            <p class="next-purchase">To use on your next <br>purchase</p>
+          </div>
+        </div>
+        <div class="pure-u-7-12">
+          <div class="user-missions-container">
+            <div id="user-missions"></div>
+            <p class="user-missions-legend">11/17 missions complete</p>
+            <div class="go-to-dashboard">Go to dashboard <span class="gray-arrow-right"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grey-dash"></div>
+    <div class="user-lower-section">
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="user-lower-left">
+            <div class="user-lower-black-dash"></div>
+            <p class="user-lower-title">Your iPhone 4 16GB</p>
+            <div id="user-phone-image"></div>
+            <div class="user-lower-details-cta">
+              Device details
+              <span class="gray-arrow-right"></span>
+            </div>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="user-lower-right">
+            <div class="user-lower-black-dash"></div>
+            <p class="user-lower-title">Plans & Services</p>
+            <p class="user-lower-copy-title">My All In</p>
+            <p class="user-lower-copy">Unlimited Talk & Data <br> 5GB Hotspot Date <br>included</p>
+            <p class="user-lower-copy-title" style="margin-top:15px">Services</p>
+            <p class="user-lower-copy">Lorem ipsum dolor</p>
+            <div class="user-lower-details-cta" style="margin-top:78px">
+              View all usage
+              <span class="gray-arrow-right"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="user-lower-left">
+            <div class="user-lower-black-dash"></div>
+            <p class="user-lower-title">Elegibility</p>
+            <p class="user-lower-copy">Upgrade in <strong>142</strong> days <br> on May, 2014</p>
+            <div class="user-lower-details-cta" style="margin-top:55px">
+              Learn more
+              <span class="gray-arrow-right"></span>
+            </div>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="user-lower-right">
+            <div class="user-lower-black-dash"></div>
+            <p class="user-lower-title">Limits & Permissions</p>
+            <p class="user-lower-copy"><strong>Text:</strong> All allowed</p>
+            <p class="user-lower-copy"><strong>Voice:</strong> All allowed</p>
+            <p class="user-lower-copy"><strong>Date:</strong> All allowed</p>
+            <div class="user-lower-details-cta" style="margin-top:40px">
+              Learn more
+              <span class="gray-arrow-right"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="user-lower-left">
+            <div class="user-lower-black-dash"></div>
+            <p class="user-lower-title">Mobile Ads & <br>Reporting <br>Preferences</p>
+            <p class="user-lower-copy">Opt in to receive ads <br> on your mobile <br> phone that are more <br> relevant to you</p>
+            <div class="user-lower-details-cta" style="margin-top:12px">
+              Learn more
+              <span class="gray-arrow-right"></span>
+            </div>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="user-lower-right">
+            <div class="user-lower-black-dash"></div>
+            <p class="user-lower-title">Change Caller ID<br>Name</p>
+            <p class="user-lower-copy">Lorem ipsum dolor</p>
+            <p class="user-lower-copy">Lorem ipsum dolor</p>
+            <p class="user-lower-copy">Lorem ipsum dolor</p>
+            <div class="user-lower-details-cta" style="margin-top:40px">
+              Learn more
+              <span class="gray-arrow-right"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
