@@ -7,7 +7,7 @@ angular.module('sprintMobile')
       restrict: 'E',
       link: function(scope, element, attrs){
       	var innerH   = $window.innerHeight;
-        var getPadd  = $window.innerWidth/2;
+        var getPadd  = $window.innerWidth - ($window.innerWidth * 0.70);
       	var menubtn  = element.find('#menu-icon');
       	var menuOpt  = element.find('.menu-options');
         var menuhere = element.find('.menu-here');

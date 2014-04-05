@@ -13,8 +13,9 @@
 
         <!-- build:css styles/pure.css -->
         <link rel="stylesheet" href="bower_components/pure/pure-min.css">
-        <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css" />
         <!-- endbuild -->
+        <!--Decoment this to use videoJS-->
+        <!--<link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css" />-->
 
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
@@ -33,7 +34,7 @@
 </head>
 <body ng-controller="MainCtrl" class="sprint-mobile-body">
   <menuaction></menuaction>   
-  <div ng-view ng-class="slideClass" class="main-cont" videojs>
+  <div ng-view ng-class="slideClass" class="main-cont">
   </div>
   <div class="view-change-overlay" ng-show="displayViewChangeOverlay">
     <div class="view-change-spinner">
@@ -55,12 +56,15 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <script src="bower_components/Swipe/swipe.js"></script>
-  <script src="bower_components/videojs/dist/video-js/video.js"></script>
-  <script src="bower_components/BigVideo.js/lib/bigvideo.js"></script>
   <script src="bower_components/lodash/dist/lodash.min.js"></script>
   <script src="bower_components/underscore/underscore-min.js"></script>
   <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
   <!-- endbuild -->
+
+  <!--Decoment this libs to use big video and video js-->
+  <!--<script src="bower_components/videojs/dist/video-js/video.js"></script>
+  <script src="bower_components/BigVideo.js/lib/bigvideo.js"></script>
+   <script src="scripts/directives/fullVideo.js"></script>-->
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
@@ -82,9 +86,9 @@
   <script src="scripts/directives/swiper.js"></script>
   <script src="scripts/directives/tileBuilder.js"></script>
   <script src="scripts/directives/menuaction.js"></script>
-  <script src="scripts/directives/fullVideo.js"></script>
   <script src="scripts/controllers/near.js"></script>
   <script src="scripts/directives/fulldiv.js"></script>
+  <script src="scripts/directives/paradaDir.js"></script>
   <!-- endbuild -->
 
 </body>
