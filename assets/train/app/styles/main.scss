@@ -2,7 +2,7 @@
 @import "compass";
 @import "compass/reset";
 //@import "retina-sprites";
-//@import "recipes/shape/polygon";
+@import "recipes/shape/polygon";
 //@import "retina-background-image";
 
 // Configuration files.
@@ -10,6 +10,31 @@
 @import "config/theme";
 @import "config/third-parties";
 //@import "config/sprites";
+
+// Modules.
+@import "modules/layout";
+@import "modules/grid-layout";
+@import "modules/functions";
+@import "modules/mixins";
+@import "modules/animations";
+@import "modules/borders";
+@import "modules/buttons";
+@import "modules/colors";
+@import "modules/forms";
+@import "modules/headings";
+@import "modules/spacing";
+@import "modules/tables";
+@import "modules/text";
+@import "modules/positions";
+@import "modules/reporting";
+@import "modules/datepicker";
+@import "modules/select";
+
+// Layout components.
+@import "layout/absolute-layout";
+@import "layout/base";
+@import "layout/header";
+@import "layout/content";
 
 $sprint-yellow: #F2EFDC;
 $sprint-font-family: 'Sprint Sans Web';

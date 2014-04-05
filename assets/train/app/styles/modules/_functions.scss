@@ -1,0 +1,25 @@
+// Get the value of a key on a pseudo map.
+@function getValueByKey($map, $key) {
+  @each $index in $map {
+    @if nth($index, 1) == $key {
+      @return nth($index, 2);
+    }
+  }
+}
+
+// Get a color by it name on the colors list.
+@function getColor($colorName) {
+  @return getValueByKey($colors, $colorName);
+}
+
+// Get a font-size measure by it name on the
+// font-sizes list.
+@function getFontSize($sizeName) {
+  @return getValueByKey($font-sizes, $sizeName);
+}
+
+// Get a space measure by it name on the spaces
+// list.
+@function getSpace($spaceName) {
+  @return getValueByKey($spaces, $spaceName);
+}

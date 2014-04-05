@@ -1,0 +1,123 @@
+// Table emulation with only divs.
+.table {
+  width : 100%;
+
+  // Add a border after the table head.
+  .thead {
+    padding-top   : 10px;
+    height        : 50px;
+    border-bottom : 1px solid getColor(lighter-gray);
+
+    // Bolderize all table head columns.
+    .tc {
+      font-weight : bold;
+    }
+  }
+
+  // Table row.
+  .tr {
+    font-size : 0;
+
+    // Table column.
+    .tc {
+      @extend .padding-small;
+      @extend .text-small;
+      @include inline-block;
+      width   : 16.6666%;
+
+      // Add a lateral padding to each table row.
+      &:first-child {
+        @extend .padding-left-large;
+      }
+
+      &:last-child {
+        @extend .padding-right-large;
+      }
+    }
+  }
+}
+
+// Real tables. Sheesh. TABLES ARE NOT BAD. PEOPLE JUST DON'T KNOW HOW TO USE THEM!!!
+.bordered-table {
+  border-top: 1px solid getColor(lighter-gray);
+
+  tbody {
+    tr {
+      border-bottom: 1px solid getColor(lighter-gray);
+    }
+  }
+}
+
+.padded-table {
+  td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.big-table {
+  th {
+    @extend .text-stone;
+    @extend .text-small;
+
+    border-top: 1px solid getColor(steel);
+    border-bottom: 1px solid getColor(steel);
+    font-size: 14px;
+    font-weight: 300;
+    padding: 12px 0px 10px;
+    text-transform: uppercase;
+
+  }
+
+  td {
+    @extend .text-small;
+
+    font-weight: 300;
+  }
+
+}
+
+.blue-thead {
+  @extend .background-gray-blue-light;
+}
+
+.padded-td {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.color-interval {
+  tr:nth-child(2n){
+    td {
+      background-color: getColor(lightest-blue);
+    }
+  }
+}
+
+.sortable {
+  cursor: pointer;
+
+  &.desc {
+    .arrow:after {
+      content: "^";
+      visibility: visible;
+    }
+  }
+
+  &.asc {
+    .arrow:after {
+      content: ">";
+      visibility: visible;
+    }
+  }
+
+  .arrow {
+    display: inline-block;
+
+    &:after {
+      content: ">";
+      visibility: hidden;
+      margin-left: 3px;
+    }
+  }
+}

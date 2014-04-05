@@ -1,0 +1,34 @@
+.clearfix {
+  @include clearfix;
+}
+
+.clearfix { 
+	*zoom: 1; 
+	&:after{
+		clear: both; 
+	}
+}
+.clearfix:before, .clearfix:after { 
+	content: " "; 
+	display: table; 
+} 
+.pull-left {
+  @include float(left);
+}
+
+.pull-right {
+  @include float(right);
+}
+
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

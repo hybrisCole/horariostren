@@ -1,0 +1,181 @@
+input, textarea, .drop-box, .upload-preview {
+  @extend .background-lightest-blue;
+  @extend .border-lighter-gray;
+  @include border-radius(2px);
+
+  padding: 8px 5px;
+  margin: 0;
+  font-size: 14px;
+  color: getColor(dark-lightblue);
+  font-family : $font-primary;
+
+}
+
+[type="text"], [type="date"], [type="number"], textarea {
+  &:focus {
+    outline: 1px solid getColor(deep-blue);
+  }
+}
+
+[contenteditable="true"] {
+
+  &:focus {
+    outline: 1px solid getColor(lighter-gray);
+  }
+}
+
+.content-editable {
+  padding: 4px 7px;
+}
+
+// Field container.
+.field {
+  @extend .margin-vertical-medium;
+  display : block;
+
+  label {
+    @extend .margin-bottom-x-small;
+    display : block;
+  }
+}
+
+.horizontal-form {
+  .btn {
+    margin: 0
+  }
+
+  input {
+    margin: 0;
+  }
+
+  select {
+    @extend .text-medium;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.form-wrapper {
+  border-bottom: 1px solid getColor(steel);
+  padding: 20px;
+
+  label {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  input, textarea {
+    background: none;
+    color: #333;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 5px 0 10px;
+    padding: 9px 9px 6px;
+  }
+
+  textarea {
+    min-height: 73px;
+  }
+
+  input[type="checkbox"] {
+    margin: 4px 9px 0 0;
+  }
+
+  select {
+    @extend .text-medium;
+    margin: 5px 1px;
+    width: 100%;
+  }
+
+  .line-break {
+    display: block;
+    margin: 2px 0 15px 0;
+  }
+
+  .half-width {
+    width: 271px;
+  }
+}
+
+.clear-button {
+  @extend .text-light-blue;
+  cursor: pointer;
+  margin: -7px 8px 0 0;
+  position: relative;
+
+  &:after {
+    @extend .circle;
+    @extend .border-steel;
+    @include absolute(-5px, -30px, inherit, inherit);
+    content: "X";
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 4px 5px 6px;
+    height: 10px;
+    width: 10px;
+  }
+}
+
+
+.global-form input.ng-invalid.ng-dirty {
+  background-color: #FA787E!important;
+  border:1px solid #FA787E;
+}
+.global-form input.ng-valid.ng-dirty {
+  background-color: #78FA89!important;
+}
+
+.select2-results {
+  font-size: 14px;
+}
+
+.drop-box {
+  border-style: dashed;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  
+  &:hover {
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+  }
+
+  &.dragover {
+    @extend .background-green-leaf;
+    @extend .text-white;
+
+    border-color: transparent;
+  }
+
+}
+
+.file-hidden {
+  opacity: 0;
+}
+
+.upload-preview {
+  margin-bottom: 10px;
+  padding: 10px 10px 24px;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    position: relative;
+    top: 60px;
+    vertical-align: top;
+  }
+
+  img {
+    display: block;
+    height: 100px;
+    max-width: 100px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.left-aligned-checkbox {
+  margin-left: -4px !important;
+}

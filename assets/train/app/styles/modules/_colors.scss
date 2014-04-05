@@ -1,0 +1,6 @@
+// Background colors class names.
+@each $color in $colors {
+  .background-#{nth($color, 1)} {
+    background-color : nth($color, 2);
+  }
+}

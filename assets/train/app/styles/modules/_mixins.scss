@@ -1,0 +1,108 @@
+// Keyframe mixin.
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+}
+
+// PlaceHolder mixin
+@mixin placeholder($color) {
+  &::-moz-placeholder { color: $color }
+  &::-webkit-input-placeholder { color: $color }
+  &:-ms-input-placeholder { color: $color }
+}
+
+@mixin transition($property, $time:"", $method:""){
+  -webkit-transition : $property #{$time} #{$method};
+  -moz-transition    : $property #{$time} #{$method};
+  -ms-transition     : $property #{$time} #{$method};
+  -o-transition      : $property #{$time} #{$method};
+  transition         : $property #{$time} #{$method};
+}
+
+@mixin boxShadow($x:'1px', $y:'1px', $blur:'1px', $offset:'0', $color:"#000"){
+      -moz-box-shadow    : #{$x} #{$y} #{$blur} #{$offset} #{$color};
+      -webkit-box-shadow : #{$x} #{$y} #{$blur} #{$offset} #{$color};
+      box-shadow         : #{$x} #{$y} #{$blur} #{$offset} #{$color};
+}
+
+@mixin before {
+  content: "";
+  display: block;
+  position: relative;
+}
+
+@mixin after {
+  @include before;
+}
+
+@mixin border-radius-by-corner($top-left, $top-right, $bottom-right, $bottom-left) {
+  -webkit-border-top-left-radius: $top-left;
+  -moz-border-top-left-radius: $top-left;
+  border-top-left-radius: $top-left;
+
+  -webkit-border-top-right-radius: $top-right;
+  -moz-border-top-right-radius: $top-right;
+  border-top-right-radius: $top-right;
+
+  -webkit-border-bottom-right-radius: $bottom-right;
+  -moz-border-bottom-right-radius: $bottom-right;
+  border-bottom-right-radius: $bottom-right;
+
+  -webkit-border-bottom-left-radius: $bottom-left;
+  -moz-border-bottom-left-radius: $bottom-left;
+  border-bottom-left-radius: $bottom-left;
+}
+
+@mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin headline-base {
+  font-family: 'proxima-nova';
+}
+
+@mixin icon-before($sprite) {
+  &:before {
+    //@include use-sprite($sprite);
+    content: "";
+    display: block;
+  }
+
+}
+
+@mixin tooltip-arrow($height: 12px, $width: 12px, $top: inherit, $right: inherit, $bottom: inherit, $left: inherit, $transform: rotate(45deg)) {
+  &:after {
+    @include inline-block;
+    @include transform($transform);
+    background: inherit;
+    border: inherit;
+    border-right: none;
+    border-top: none;
+    content: "";
+    height: $height;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+
+    width      : $arrow-width * 2;
+  }
+}
