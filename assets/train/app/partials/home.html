@@ -15,7 +15,7 @@
               </a>
             </div>
             <div class="pure-u-1-5">
-              
+
         <div  ng-click="closeSprintStoreLocation()">
           <div class="close">X</div>
           <!--<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>-->
@@ -24,51 +24,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="pure-g">
-      <div class="paradas">
-        <div class="main-parada pure-u-1" ng-click="openDrop()"><p>PARADAS</p></div>
-        <div class="list-cont" ng-show="showDrop">
-          <div class="input-append">
-          <input type="text" ng-model="search"
-                 placeholder="Search user"
-                 class="form-control" >
-        </div>
-          <div class="parada pure-u-1" ng-repeat="parada in paradas | filter:search" ng-click="go('near/{{parada.id}}')">
-            <p>{{parada.nombre}}</p>
-          </div>
-        </div> 
-      </div>
-    </div>
-    <div class="pure-g">
-      <div class="paradas">
-        <div class="main-parada pure-u-1" ng-click=""><p>PARADAS</p></div>
-        <div class="list-cont" ng-show="">
-          <div class="input-append">
-          <input type="text" ng-model="search"
-                 placeholder="Search user"
-                 class="form-control" >
-        </div>
-          <div class="parada pure-u-1" ng-repeat="parada in paradas | filter:search">
-            <p>{{parada.nombre}}</p>
-          </div>
-        </div> 
-      </div>
-    </div>
-    <div class="pure-g">
-      <div class="paradas">
-        <div class="main-parada pure-u-1" ng-click=""><p>PARADAS</p></div>
-        <div class="list-cont" ng-show="">
-          <div class="input-append">
-          <input type="text" ng-model="search"
-                 placeholder="Search user"
-                 class="form-control" >
-        </div>
-          <div class="parada pure-u-1" ng-repeat="parada in paradas | filter:search">
-            <p>{{parada.nombre}}</p>
-          </div>
-        </div> 
       </div>
     </div>
   </div>
