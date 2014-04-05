@@ -1,0 +1,28 @@
+.content {
+  margin: 24px 17px;
+  position: relative;
+  overflow: hidden;
+
+  .content-headlines {
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    @include headline-base;
+    color: getColor(dark-lightblue);
+    font-weight: 200;
+    font-size: 34px;
+    margin-bottom: 7px;
+    word-spacing: 1px;
+
+  }
+
+  h4 {
+    @include headline-base;
+    color: getColor(dark-lighterblue);
+    font-weight: 100;
+    font-size: 15px;
+    word-spacing: 2px;
+  }
+
+}

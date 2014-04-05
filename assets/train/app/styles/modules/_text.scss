@@ -1,0 +1,20 @@
+// Text colors.
+@each $color in $colors {
+  .text-#{nth($color, 1)} {
+    color : nth($color, 2);
+  }
+}
+
+// Text sizes.
+@each $size in $font-sizes {
+  .text-#{nth($size, 1)} {
+    font-size : nth($size, 2);
+  }
+}
+
+// Text aligning.
+@each $position in left, center, right, justify {
+  .text-#{$position} {
+    text-align : $position;
+  }
+}

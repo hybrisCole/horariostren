@@ -1,13 +1,46 @@
+// Core.
+@import "compass";
+@import "compass/reset";
+//@import "retina-sprites";
+@import "recipes/shape/polygon";
+//@import "retina-background-image";
+
+// Configuration files.
+@import "config/breakpoints";
+@import "config/theme";
+@import "config/third-parties";
+//@import "config/sprites";
+
+// Modules.
+@import "modules/layout";
+@import "modules/grid-layout";
+@import "modules/functions";
+@import "modules/mixins";
+@import "modules/animations";
+@import "modules/borders";
+@import "modules/buttons";
+@import "modules/colors";
+@import "modules/forms";
+@import "modules/headings";
+@import "modules/spacing";
+@import "modules/tables";
+@import "modules/text";
+@import "modules/positions";
+@import "modules/reporting";
+@import "modules/datepicker";
+@import "modules/select";
+
+// Layout components.
+@import "layout/absolute-layout";
+@import "layout/base";
+@import "layout/header";
+@import "layout/content";
+
 $sprint-yellow: #F2EFDC;
 $sprint-font-family: 'Sprint Sans Web';
 $vincent : 'vincentregular';
 
-@import "compass/css3/shared";
-@import "compass/css3/border-radius";
-@import "compass/css3/transform";
-@import "compass/css3/transition";
 
-@import "sprint-fonts";
 @import "tile";
 @import "home";
 @import "menu";
@@ -17,6 +50,8 @@ $vincent : 'vincentregular';
 @import "shopping-cart";
 @import "checkout";
 @import "spinner-view-change";
+@import "margin-padding";
+@import "colors";
 
 @mixin transition($time, $type){
   -webkit-transition : all $time $type;

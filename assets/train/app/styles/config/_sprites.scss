@@ -1,0 +1,25 @@
+.sprites {
+	&.search {
+		//@include use-sprite("search");
+	}
+}
+
+.user-placeholder {
+  //@include use-sprite("user-placeholder");
+}
+
+.logo-clear {
+  //@include use-sprite("logo-clear");
+}
+
+.success-score-chart {
+  //@include use-sprite("success-score-chart");
+}
+
+.success-cycle-chart {
+  //@include use-sprite("success-cycle-chart");
+}
+
+.ideal-client-chart {
+  //@include use-sprite("ideal-client-chart");
+}

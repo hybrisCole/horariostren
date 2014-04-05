@@ -1,0 +1,4 @@
+.absolute-layout {
+  @include absolute(0, 0, 0, 0);
+  overflow: auto;
+}
