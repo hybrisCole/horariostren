@@ -7,6 +7,8 @@ angular.module('sprintMobile.services')
         var defer = $q.defer();
         $http.get('http://horarios-tren-data.nodejitsu.com/parada').success(function(data){
           defer.resolve(data);
+        }).error(function(data){
+          defer.reject(data);
         });
         return defer.promise;
       }
