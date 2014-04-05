@@ -6,7 +6,6 @@ angular.module('sprintMobile', [
     'ngAnimate',
     'angular-gestures',
     'swiper',
-    'google-maps',
     'sprintMobile.controllers',
     'sprintMobile.services',
     'sprintMobile.directives'
@@ -38,6 +37,13 @@ angular.module('sprintMobile', [
           Paradas : ['paradas','$q',function(paradas, $q) {
             var defer = $q.defer();
             paradas.getParadas().then(function(data){
+              return defer.resolve(data);
+            });
+            return defer.promise;
+          }],
+          User : ['user','$q',function(user, $q) {
+            var defer = $q.defer();
+            user.getUserPos().then(function(data){
               return defer.resolve(data);
             });
             return defer.promise;

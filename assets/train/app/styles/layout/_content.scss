@@ -25,7 +25,6 @@
     word-spacing: 2px;
   }
   .trenes-content{
-    @extend .padding-top-lateral-small;
-    @extend .border-deep-blue;
+    margin-top:50px;
   }
 }

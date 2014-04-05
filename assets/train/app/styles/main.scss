@@ -65,12 +65,14 @@ body {
   overflow-y : scroll;
 }
 .main-cont{
-  background : rgba(0, 121, 147, 0.5);
+  background : rgba(0, 121, 147, 0.5); 
 }
-
+.content{
+  margin:0 15px;
+}
 #big-video-wrap{
   z-index  : -10!important;
-  position : fixed;
+  position : fixed; 
 }
 .yellow-sprint{
   color:$sprint-yellow;

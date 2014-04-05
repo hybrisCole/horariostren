@@ -7,7 +7,6 @@ angular.module('sprintMobile.directives')
       link: function(scope, element, attrs){
       	var inner   = $window.innerHeight;
 		    element.height(inner);
-		    element.find('.angular-google-map-container').height(inner - 50);
       }
     };
 	}]);

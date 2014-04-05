@@ -14,7 +14,7 @@
     "videojs": "~4.4.3",
     "BigVideo.js": "~1.0.7",
     "lodash": "~2.4.1",
-    "angular-google-maps": "~1.0.15"
+    "gmaps": "~0.4.11"
   },
   "devDependencies": {}
 }
