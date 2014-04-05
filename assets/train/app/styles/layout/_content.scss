@@ -24,7 +24,7 @@
     font-size: 15px;
     word-spacing: 2px;
   }
-  .trenes-content{
-    margin-top:50px;
-  }
+}
+.trenes-content{
+  @extend .padding-top-x-large;
 }
