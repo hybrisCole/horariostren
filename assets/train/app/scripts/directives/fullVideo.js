@@ -9,9 +9,10 @@ angular.module('sprintMobile')
           if($document.find('body #big-video-wrap').length > 0){
             $document.find('body #big-video-wrap').show();
           }else{
-            var BV = new $.BigVideo();
+            // initialize BigVideo
+            var BV = new $.BigVideo({useFlashForFirefox:false});
             BV.init();
-            BV.show('http://vjs.zencdn.net/v/oceans.mp4');
+            BV.show('http://vjs.zencdn.net/v/oceans.mp4', {altSource:'http://vjs.zencdn.net/v/oceans.webm',ambient:true});
             element.height($window.innerHeight);
           }
         }else{
