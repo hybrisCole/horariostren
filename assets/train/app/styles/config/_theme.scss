@@ -45,7 +45,14 @@ $colors :
   alert-5 #adc422,
   alert-6 #61c921,
 
-  background-1 #fff2e3;
+  background-1 #fff2e3,
+
+  //TREN
+  gris-tren #444344,
+  azul-tren #007993,
+  crema-tren #F2EFDC,
+  rojo-tren #BF4B4B;
+
 
 
 // Font configuration.
@@ -61,12 +68,12 @@ $font-sizes        :
 
 // Spacing sizes for padding and margins.
 $spaces :
-  xx-small 3px,
-  x-small  5px,
-  small    10px,
-  medium   15px,
-  large    20px,
-  x-large  25px;
+  xx-small 5px,
+  x-small  10px,
+  small    15px,
+  medium   20px,
+  large    25px,
+  x-large  50px;
 
 $space-x-small : 5px;
 $space-small   : 10px;

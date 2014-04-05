@@ -1,5 +1,5 @@
 .content {
-  margin: 24px 17px;
+  margin:0 15px;
   position: relative;
   overflow: hidden;
 
@@ -24,5 +24,8 @@
     font-size: 15px;
     word-spacing: 2px;
   }
-
+  .trenes-content{
+    @extend .padding-top-lateral-small;
+    @extend .border-deep-blue;
+  }
 }
