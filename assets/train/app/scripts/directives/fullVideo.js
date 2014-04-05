@@ -18,6 +18,6 @@ angular.module('sprintMobile')
         }else{
           $document.find('body #big-video-wrap').hide();
         }
-		  }
+      }
     };
   }]);
