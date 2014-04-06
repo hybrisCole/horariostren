@@ -16,10 +16,12 @@ angular.module('sprintMobile', [
         templateUrl : 'partials/home.html', 
         controller  : 'IndexCtrl',
         resolve     : {
-          Paradas :['paradas','$q',function(paradas, $q) {
+          HomeData :['rutas','paradas','$q',function(rutas,paradas, $q) {
             var defer = $q.defer();
-            paradas.getParadas().then(function(data){
-              return defer.resolve(data);
+            paradas.getParadas().then(function(paradasData){
+              rutas.getRutas().then(function(rutasData){
+                return defer.resolve({rutasData:rutasData,paradasData:paradasData});
+              });
             });
             return defer.promise;
           }],

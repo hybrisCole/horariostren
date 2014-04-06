@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('sprintMobile.controllers')
-	.controller('IndexCtrl', ['$scope','Paradas','User',
-		function ($scope,Paradas,User){
-		$scope.paradas  = Paradas;
+	.controller('IndexCtrl', ['$scope','HomeData','User',
+		function ($scope,HomeData,User){
+		$scope.paradas  = HomeData.paradasData;
+    $scope.rutas  = HomeData.rutasData;
 		$scope.showDrop = false;
   	$scope.slide = '';
   	$scope.showClosestSprintStore = true;
@@ -12,10 +13,12 @@ angular.module('sprintMobile.controllers')
     	$scope.showClosestSprintStore = false;
   	}
 
-    var distances = haversine(Paradas, User.coords),
+
+    //TODO: Tirar esto a un servicio
+    var distances = haversine($scope.paradas, User.coords),
         lowest = _.min(_.pluck(distances, "distance")),
         idNearParada = _.where(distances, {'distance':lowest}),
-        nearMe = _.where(Paradas, {'id':idNearParada[0].id});
+        nearMe = _.where($scope.paradas, {'id':idNearParada[0].id});
 
     $scope.near = nearMe[0];
 
