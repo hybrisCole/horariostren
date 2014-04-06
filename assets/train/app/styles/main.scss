@@ -27,7 +27,6 @@
 @import "modules/text";
 @import "modules/positions";
 @import "modules/reporting";
-@import "modules/datepicker";
 @import "modules/select";
 
 // Layout components.
@@ -63,19 +62,18 @@ $vincent : 'vincentregular';
 body {
   color      : #333;
   overflow-x : hidden;
-  overflow-y : scroll;  
+  overflow-y : scroll;
 }
 .main-cont{
-  background : rgba(0, 121, 147, 1); 
+  background : rgba(0, 121, 147, 0.5); 
 }
 .content{
   margin:0 15px;
 }
-/*#big-video-wrap{
+#big-video-wrap{
   z-index  : -10!important;
   position : fixed; 
-}*/
-
+}
 .yellow-sprint{
   color:$sprint-yellow;
 }
@@ -95,94 +93,6 @@ body {
   background-color: #bfbfbf;
 }
 
- .sprint-mobile-body .pure-g-r [class *="pure-u"]{
-  font-family: $sprint-font-family, sans-serif;
-}
-
-.sprint-content{
-    padding-top:50px;
-}
-
-.yellow-arrow-right{
-  background: url('../images/arrow_next.svg');
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  background-size: 25px 25px;
-  vertical-align: bottom;
-}
-
-
-.gray-arrow-right{
-  background: url('../images/arrow_next_gray.svg');
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  background-size: 25px 25px;
-  vertical-align: bottom;
-}
-
-.scroller {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    position: absolute;
-    top: 70px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-}
-
-/*Slider*/
-
-.slider-container{
-    overflow: hidden;
-    width: 100%;
-    position:relative;
-}
-
-.slider-contents > .slider-item{
-    float:left;
-    padding: 0 0.5em;
-}
-
-.black-and-yellow-button{
-  display:block;
-  text-decoration: none;
-  text-align: center;
-  background-color: #000;
-  color:$sprint-yellow;
-  font-size:0.938em;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding:15px 0;
-}
-
-
-.gray-and-white-button{
-  display:block;
-  text-decoration: none;
-  text-align: center;
-  background-color: #bfbfbf;
-  color:#fff;
-  font-size:0.938em;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding:15px 0;
-  margin:15px 0;
-}
-
-
-.gray-and-black-button{
-  display:block;
-  text-decoration: none;
-  text-align: center;
-  background-color: #d8d8d8;
-  color:#000;
-  font-size:0.938em;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding:15px 0;
-}
 
 /*View Sliding*/
 
@@ -240,40 +150,3 @@ body {
   @include translateX(100%, 0, true);
 }
 
-/*Stars*/
-
-.product-ranking{
-  margin-top:5px;
-}
-
-.star-container{
-  width: 18px;
-  height: 18px;
-  display:inline-block;
-}
-
-.star-on{
-  background: url('../images/star_on.svg') no-repeat top left;
-  background-size: 15px 15px;
-}
-
-.star-off{
-  background: url('../images/star_off.svg') no-repeat top left;
-  background-size: 15px 15px
-}
-
-/*Swipe.js*/
-.swipe {
-    overflow: hidden;
-    visibility: hidden;
-    position: relative;
-}
-.swipe-wrap {
-    overflow: hidden;
-    position: relative;
-}
-.swipe-wrap > div {
-    float:left;
-    width:100%;
-    position: relative;
-}
