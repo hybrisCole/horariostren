@@ -40,17 +40,10 @@ $sprint-font-family: 'Sprint Sans Web';
 $vincent : 'vincentregular';
 
 
-@import "tile";
 @import "home";
 @import "menu";
-@import "user";
-@import "product-list";
-@import "product-detail";
-@import "shopping-cart";
 @import "checkout";
 @import "spinner-view-change";
-@import "margin-padding";
-@import "colors";
 
 @mixin transition($time, $type){
   -webkit-transition : all $time $type;
@@ -66,31 +59,6 @@ body {
 }
 .main-cont{
   background : rgba(0, 121, 147, 0.5); 
-}
-.content{
-  margin:0 15px;
-}
-#big-video-wrap{
-  z-index  : -10!important;
-  position : fixed; 
-}
-.yellow-sprint{
-  color:$sprint-yellow;
-}
-
-.gray-sprint{
-  color:#c3c3c3;
-}
-
-.black-dash{
-  height: 1px;
-  width: 100%;
-  background-color: #000;
-}
-.grey-dash{
-  height: 1px;
-  width: 100%;
-  background-color: #bfbfbf;
 }
 
 
