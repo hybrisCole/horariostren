@@ -12,18 +12,10 @@ angular.module('sprintMobile.controllers')
     	$scope.showClosestSprintStore = false;
   	}
 
-  	$scope.openDrop = function(){
-  		if($scope.showDrop){
-  			$scope.showDrop = false;
-  		}else{
-  			$scope.showDrop = true;
-  		}
-  	}
-
-    var distances = haversine(Paradas, User.coords);
-    var lowest = _.min(_.pluck(distances, "distance")); 
-    var idNearParada = _.where(distances, {'distance':lowest});
-    var nearMe = _.where(Paradas, {'id':idNearParada[0].id});
+    var distances = haversine(Paradas, User.coords),
+        lowest = _.min(_.pluck(distances, "distance")),
+        idNearParada = _.where(distances, {'distance':lowest}),
+        nearMe = _.where(Paradas, {'id':idNearParada[0].id});
 
     $scope.near = nearMe[0];
 
