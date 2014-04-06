@@ -28,3 +28,7 @@
 .trenes-content{
   @extend .padding-top-x-large;
 }
+.separador-crema{
+  height: 1px;
+  background-color: getColor(crema-tren);
+}
