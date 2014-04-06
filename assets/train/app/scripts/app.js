@@ -22,6 +22,13 @@ angular.module('sprintMobile', [
               return defer.resolve(data);
             });
             return defer.promise;
+          }],
+          User : ['user','$q',function(user, $q) {
+            var defer = $q.defer();
+            user.getUserPos().then(function(data){
+              return defer.resolve(data);
+            });
+            return defer.promise;
           }]
         }
       })
