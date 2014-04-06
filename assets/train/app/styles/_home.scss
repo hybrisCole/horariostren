@@ -126,4 +126,12 @@ img {
     display:none;
 }
 
-.ruta-header{}
+.ruta-header{
+  @extend .padding-vertical-medium;
+  @extend .text-center;
+  @extend .text-medium;
+  background-color: getColor(rojo-tren);
+  color: getColor(crema-tren);
+  font-weight: 700;
+
+}
