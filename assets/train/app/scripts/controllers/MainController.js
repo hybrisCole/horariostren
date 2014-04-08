@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sprintMobile.controllers', []).controller('MainCtrl', ['$scope', '$rootScope', '$window', '$location', function ($scope, $rootScope, $window, $location) {
+angular.module('trenesMobile.controllers', []).controller('MainCtrl', ['$scope', '$rootScope', '$window', '$location', function ($scope, $rootScope, $window, $location) {
   $scope.slideClass = 'gr';
   $rootScope.back = function() {
     $scope.slideClass = 'slide-right';

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sprintMobile.services')
+angular.module('trenesMobile.services')
   .factory('rutas', ['$q','$http',function ($q, $http) {
     return {
       getRutas: function () {

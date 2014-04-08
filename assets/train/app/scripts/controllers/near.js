@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sprintMobile.controllers')
+angular.module('trenesMobile.controllers')
   .controller('NearCtrl', ['$scope','$routeParams','Paradas','User', function ($scope, $routeParams, Paradas, User){
   	var currentId     = $routeParams.id;
   	var currentParada = _.where(Paradas, {'id':currentId});

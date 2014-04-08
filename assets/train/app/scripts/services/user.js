@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sprintMobile.services')
+angular.module('trenesMobile.services')
   .factory('user', ['$q', function ($q) {
     // Public API here
     return {

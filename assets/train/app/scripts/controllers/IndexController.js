@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sprintMobile.controllers')
+angular.module('trenesMobile.controllers')
 	.controller('IndexCtrl', ['$scope','HomeData','User',
 		function ($scope,HomeData,User){
 		$scope.paradas  = HomeData.paradasData;

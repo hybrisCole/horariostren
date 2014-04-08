@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sprintMobile')
+angular.module('trenesMobile.directives')
   .directive('menuaction', ['$window','$document',function ($window, $document) {
     return {
       templateUrl: 'partials/menu.html',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sprintMobile.directives')
+angular.module('trenesMobile.directives')
   .directive('routeMap',['$interval', function ($interval) {
     return {
       scope: {

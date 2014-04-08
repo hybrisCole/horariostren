@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sprintMobile')
+angular.module('trenesMobile.directives')
   .directive('videojs', ['$window','$document','$location',function ($window, $document, $location){
     return {
       restrict: 'A',

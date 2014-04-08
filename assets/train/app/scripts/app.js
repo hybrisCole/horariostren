@@ -1,14 +1,14 @@
 'use strict';
 
-angular.module('sprintMobile', [
+angular.module('trenesMobile', [
     'ngTouch',
     'ngRoute',
     'ngAnimate',
     'angular-gestures',
     'swiper',
-    'sprintMobile.controllers',
-    'sprintMobile.services',
-    'sprintMobile.directives'
+    'trenesMobile.controllers',
+    'trenesMobile.services',
+    'trenesMobile.directives'
   ]).
   config(['$routeProvider', function ($routeProvider) {
     $routeProvider

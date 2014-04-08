@@ -1,4 +1,4 @@
-angular.module('sprintMobile.directives', [])
+angular.module('trenesMobile.directives', [])
   .directive('tileBuilder', ['$parse','$timeout','$rootScope',function ($parse,$timeout,$rootScope) {
     return {
       scope: {
