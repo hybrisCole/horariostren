@@ -13,7 +13,8 @@ angular.module('trenesMobile.services')
             });
           },function(error){
             $rootScope.$apply(function(){
-              defer.reject(error);
+              alert(JSON.stringify(error));
+              defer.resolve({"timestamp":1396975380431,"coords":{"speed":null,"heading":null,"altitudeAccuracy":null,"accuracy":36,"altitude":null,"longitude":-84.04992109999999,"latitude":9.932789}});
             });
           });
         }
