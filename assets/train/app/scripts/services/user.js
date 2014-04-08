@@ -1,20 +1,19 @@
 'use strict';
 
 angular.module('trenesMobile.services')
-  .factory('user', ['$q', function ($q) {
+  .factory('user', ['$q','$window','$rootScope',function($q,$window,$rootScope) {
     // Public API here
     return {
       getUserPos : function () {
         var defer = $q.defer();
-        // check for Geolocation supportt
-        if(navigator.geolocation){
-          navigator.geolocation.getCurrentPosition(showPosition);
-        }
-        else{
-          defer.resolve('Geolocation is not supported for this Browser/OS version yet.');
-        }
-        function showPosition(position){
-          defer.resolve(position);
+        if ($window.navigator && $window.navigator.geolocation) {
+          $window.navigator.geolocation.getCurrentPosition(function(position){
+            $rootScope.$apply(function(){
+              defer.resolve(position);
+            });
+          },function(error){
+            defer.reject(error);
+          });
         }
         return defer.promise;
       }
