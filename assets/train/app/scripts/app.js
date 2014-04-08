@@ -11,12 +11,12 @@ var geolocFunction = function(user, $q) {
 };
 
 angular.module('trenesMobile', [
-    'ngTouch',
-    'ngRoute',
-    'ngAnimate',
     'trenesMobile.controllers',
     'trenesMobile.services',
-    'trenesMobile.directives'
+    'trenesMobile.directives',
+    'ngTouch',
+    'ngRoute',
+    'ngAnimate'
   ]).
   config(['$routeProvider', function ($routeProvider) {
     $routeProvider
