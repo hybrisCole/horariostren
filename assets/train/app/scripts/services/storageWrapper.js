@@ -5,6 +5,7 @@ angular.module('trenesMobile.services')
     return {
       getData: function (localStorageKey,getUrl) {
         console.log('storageWrapper.getData()');
+        console.log(Modernizr.localstorage);
         var defer = $q.defer();
         if(Modernizr.localstorage){
           var localStorageData = JSON.parse(localStorage.getItem(localStorageKey));
