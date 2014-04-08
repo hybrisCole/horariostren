@@ -14,7 +14,6 @@ angular.module('trenesMobile', [
     'ngTouch',
     'ngRoute',
     'ngAnimate',
-    'angular-gestures',
     'trenesMobile.controllers',
     'trenesMobile.services',
     'trenesMobile.directives'
