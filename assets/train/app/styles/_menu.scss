@@ -8,10 +8,10 @@
 }
 
 .menu-options{
-  width      : 100%; 
+  width      : 100%;
   background : #444344;
   position   : fixed;
-  z-index    : -9;  
+  z-index    : -9;
 }
 
 .menu-here{
@@ -31,7 +31,7 @@
     background     : #bf4b4b;
     width          : 38px;
     height         : 3px;
-    margin-bottom  : 5px;     
+    margin-bottom  : 5px;
   }
 }
 
@@ -40,18 +40,18 @@
 }
 
 .sprint-logo{
-  font-family     : $vincent;
-  font-size       : 24px; 
-  width           : 100%; 
+  //font-family     : $vincent;
+  font-size       : 24px;
+  width           : 100%;
   display         : block;
   span{
     color : #007993;
   }
   p{
-    text-align : center; 
+    text-align : center;
     color      : #bf4b4b;
     margin     : 14px 0;
-  } 
+  }
 }
 
 #sign-in-logo{
@@ -60,7 +60,7 @@
   background      : url('../images/settings.svg') no-repeat top left;
   background-size : 30px 33px;
   display         : inline-block;
-  margin-top      : 8px; 
+  margin-top      : 8px;
 }
 .sprint-log-in{
   margin:5px 5px 0;

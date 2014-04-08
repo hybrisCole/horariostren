@@ -21,7 +21,7 @@ angular.module('trenesMobile', [
             paradas.getParadas().then(function(paradasData){
               rutas.getRutas().then(function(rutasData){
                 horarios.getHorarios().then(function(horariosData){
-                  return defer.resolve({rutasData:rutasData,paradasData:paradasData,horariosData:horariosData});
+                  defer.resolve({rutasData:rutasData,paradasData:paradasData,horariosData:horariosData});
                 });
               });
             });
@@ -30,17 +30,12 @@ angular.module('trenesMobile', [
           User : ['user','$q',function(user, $q) {
             var defer = $q.defer();
             user.getUserPos().then(function(data){
-              return defer.resolve(data);
+              defer.resolve(data);
             });
             return defer.promise;
           }]
         }
       })
-      .when('/user', {templateUrl: 'partials/user.html', controller: 'UserCtrl'})
-      .when('/phoneList', {templateUrl: 'partials/phoneList.html', controller: 'PhoneListCtrl'})
-      .when('/phoneDetail/:id', {templateUrl: 'partials/phoneDetail.html', controller: 'PhoneDetailCtrl'})
-      .when('/shoppingCart', {templateUrl: 'partials/shoppingCart.html', controller: 'ShoppingCartCtrl'})
-      .when('/checkout', {templateUrl: 'partials/checkout.html', controller: 'CheckoutCtrl'})
       .when('/near/:id', {
         templateUrl: 'views/near.html',
         controller: 'NearCtrl',
@@ -48,14 +43,14 @@ angular.module('trenesMobile', [
           Paradas : ['paradas','$q',function(paradas, $q) {
             var defer = $q.defer();
             paradas.getParadas().then(function(data){
-              return defer.resolve(data);
+              defer.resolve(data);
             });
             return defer.promise;
           }],
           User : ['user','$q',function(user, $q) {
             var defer = $q.defer();
             user.getUserPos().then(function(data){
-              return defer.resolve(data);
+              defer.resolve(data);
             });
             return defer.promise;
           }]
