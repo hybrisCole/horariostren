@@ -1,5 +1,5 @@
 {
-  "name": "sprint-mdotproto",
+  "name": "amatista-trenes",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -30,5 +30,9 @@
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "subdomain": "hybrisCole-train",
+  "scripts": {
+    "start": "node app"
   }
 }
