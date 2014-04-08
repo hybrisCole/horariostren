@@ -1,4 +1,14 @@
 'use strict';
+var geolocFunction = function(user, $q) {
+  var defer = $q.defer();
+  user.getUserPos().then(function(data){
+    defer.resolve(data);
+  },function(data){
+    //en caso de error, devolviendo un objeto por defecto Con la posicion de la choza de Cali
+    defer.resolve({"timestamp":1396975380431,"coords":{"speed":null,"heading":null,"altitudeAccuracy":null,"accuracy":36,"altitude":null,"longitude":-84.04992109999999,"latitude":9.932789}});
+  });
+  return defer.promise;
+};
 
 angular.module('trenesMobile', [
     'ngTouch',
@@ -27,19 +37,7 @@ angular.module('trenesMobile', [
             });
             return defer.promise;
           }],
-          User : ['user','$q',function(user, $q) {
-            var defer = $q.defer();
-            alert('USER');
-            user.getUserPos().then(function(data){
-              alert(JSON.stringify(data));
-              defer.resolve(data);
-            },function(data){
-              alert(JSON.stringify(data));
-              //en caso de error, devolviendo un objeto por defecto Con la posicion de la choza de Cali
-              defer.resolve({"timestamp":1396975380431,"coords":{"speed":null,"heading":null,"altitudeAccuracy":null,"accuracy":36,"altitude":null,"longitude":-84.04992109999999,"latitude":9.932789}});
-            });
-            return defer.promise;
-          }]
+          User : ['user','$q',geolocFunction]
         }
       })
       .when('/near/:id', {
@@ -53,13 +51,7 @@ angular.module('trenesMobile', [
             });
             return defer.promise;
           }],
-          User : ['user','$q',function(user, $q) {
-            var defer = $q.defer();
-            user.getUserPos().then(function(data){
-              defer.resolve(data);
-            });
-            return defer.promise;
-          }]
+          User : ['user','$q',geolocFunction]
         }
       })
       .otherwise({redirectTo: '/'});

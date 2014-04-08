@@ -13,7 +13,7 @@ angular.module('trenesMobile.services')
             });
           },function(error){
             $rootScope.$apply(function(){
-              defer.resolve(error);
+              defer.reject(error);
             });
           });
         }

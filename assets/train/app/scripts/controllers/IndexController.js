@@ -3,7 +3,7 @@
 angular.module('trenesMobile.controllers')
 	.controller('IndexCtrl', ['$scope','HomeData','User',
 		function ($scope,HomeData,User){
-      console.log(JSON.stringify(User));
+      alert('CONTROLADOR'+JSON.stringify(User));
 		$scope.paradas  = HomeData.paradasData;
     $scope.rutas  = HomeData.rutasData;
 		$scope.showDrop = false;
