@@ -1,4 +1,15 @@
 'use strict';
+var geolocFunction = function(user, $q) {
+  var defer = $q.defer();
+  user.getUserPos().then(function(data){
+    defer.resolve(data);
+  },function(data){
+    //en caso de error, devolviendo un objeto por defecto Con la posicion de la choza de Cali
+    defer.resolve(data);
+  });
+  return defer.promise;
+};
+
 angular.module('trenesMobile', [
     'ngTouch',
     'ngRoute',
@@ -25,7 +36,8 @@ angular.module('trenesMobile', [
               });
             });
             return defer.promise;
-          }]
+          }],
+          User : ['user','$q',geolocFunction]
         }
       })
       .when('/near/:id', {
@@ -38,7 +50,8 @@ angular.module('trenesMobile', [
               defer.resolve(data);
             });
             return defer.promise;
-          }]
+          }],
+          User : ['user','$q',geolocFunction]
         }
       })
       .otherwise({redirectTo: '/'});
