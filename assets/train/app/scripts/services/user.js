@@ -12,6 +12,7 @@ angular.module('trenesMobile.services')
               defer.resolve(position);
             });
           },function(error){
+            console.log('ERROR: when geoloc..., sending default coords'+ JSON.stringify(error));
             $rootScope.$apply(function(){
               defer.resolve({"timestamp":1396975380431,"coords":{"speed":null,"heading":null,"altitudeAccuracy":null,"accuracy":36,"altitude":null,"longitude":-84.04992109999999,"latitude":9.932789}});
             });

@@ -4,8 +4,6 @@ angular.module('trenesMobile.services')
   .factory('storageWrapper', ['$q','$http',function ($q, $http) {
     return {
       getData: function (localStorageKey,getUrl) {
-        console.log('storageWrapper.getData()');
-        console.log(Modernizr.localstorage);
         var defer = $q.defer();
         if(Modernizr.localstorage){
           var localStorageData = JSON.parse(localStorage.getItem(localStorageKey));
@@ -21,6 +19,7 @@ angular.module('trenesMobile.services')
           }
         //No local storage, just doing REST call.....
         }else{
+          console.log('ERROR: localStorage not available...');
           $http.get(getUrl).success(function(data){
             defer.resolve(data);
           }).error(function(data){
