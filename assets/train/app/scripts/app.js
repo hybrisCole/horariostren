@@ -63,4 +63,17 @@ angular.module('trenesMobile', [
     $rootScope.$on( "$routeChangeSuccess", function (event, current, previous){
       $rootScope.displayViewChangeOverlay = false;
     });
+
+    var testKey = 'qeTest', storage = window.sessionStorage;
+
+    try {
+
+      // Try and catch quota exceeded errors
+      storage.setItem(testKey, '1');
+      storage.removeItem(testKey);
+    } catch (error) {
+      if (error.code === DOMException.QUOTA_EXCEEDED_ERR && storage.length === 0)
+        alert('Hello, private browser.');
+      else throw error;
+    }
   }]);
