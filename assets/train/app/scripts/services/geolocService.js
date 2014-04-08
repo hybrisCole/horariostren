@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.services')
-  .factory('user', ['$q','$window','$rootScope',function($q,$window,$rootScope) {
+  .factory('geolocService', ['$q','$window','$rootScope',function($q,$window,$rootScope) {
     // Public API here
     return {
       getUserPos : function () {
