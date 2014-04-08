@@ -3,12 +3,13 @@
 angular.module('trenesMobile.controllers')
 	.controller('IndexCtrl', ['$scope','HomeData','User',
 		function ($scope,HomeData,User){
+      console.log(JSON.stringify(User));
 		$scope.paradas  = HomeData.paradasData;
     $scope.rutas  = HomeData.rutasData;
 		$scope.showDrop = false;
   	$scope.slide = '';
   	$scope.showClosestSprintStore = true;
-  	
+
   	$scope.closeSprintStoreLocation = function(){
     	$scope.showClosestSprintStore = false;
   	}
@@ -44,5 +45,5 @@ angular.module('trenesMobile.controllers')
     };
 
     function rad(x) { return x * Math.PI / 180 };
-	
+
   }]);
