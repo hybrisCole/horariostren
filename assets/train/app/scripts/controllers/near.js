@@ -20,7 +20,7 @@ angular.module('trenesMobile.controllers')
         {
           latitude  : userPos.latitude,
           longitude : userPos.longitude
-        },
+        }
       ]
 		};
   }]);
