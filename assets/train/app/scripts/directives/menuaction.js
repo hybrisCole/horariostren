@@ -14,7 +14,7 @@ angular.module('trenesMobile.directives',[])
       	var menuBar  = element.find('.pure-menu');
       	var holeDoc  = $document.find('body');
       	var menuOpen = false;
-        
+
       	menuhere.height(innerH);
         menuhere.width(getPadd);
 
