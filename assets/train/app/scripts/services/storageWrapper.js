@@ -19,7 +19,7 @@ angular.module('trenesMobile.services')
           }else{
             defer.resolve(localStorageData)
           }
-        //No local storage, just doing REST call...
+        //No local storage, just doing REST call.....
         }else{
           $http.get(getUrl).success(function(data){
             defer.resolve(data);
