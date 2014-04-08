@@ -16,6 +16,7 @@ angular.module('trenesMobile.services')
         }else{
           defer.resolve(localStorageData)
         }
+
         return defer.promise;
       }
     };

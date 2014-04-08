@@ -6,7 +6,7 @@ angular.module('trenesMobile.services')
     return {
       getUserPos : function () {
         var defer = $q.defer();
-        // check for Geolocation support
+        // check for Geolocation supportt
         if(navigator.geolocation){
           navigator.geolocation.getCurrentPosition(showPosition);
         }
