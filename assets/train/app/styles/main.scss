@@ -28,6 +28,7 @@
 @import "modules/positions";
 @import "modules/reporting";
 @import "modules/select";
+@import "modules/spinner-view-change";
 
 // Layout components.
 @import "layout/absolute-layout";
@@ -35,15 +36,7 @@
 @import "layout/header";
 @import "layout/content";
 
-$sprint-yellow: #F2EFDC;
-$sprint-font-family: 'Sprint Sans Web';
-$vincent : 'vincentregular';
-
-
-@import "home";
-@import "menu";
-@import "checkout";
-@import "spinner-view-change";
+@import "modules/home";
 
 @mixin transition($time, $type){
   -webkit-transition : all $time $type;

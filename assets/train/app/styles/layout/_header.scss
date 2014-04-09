@@ -1,178 +1,106 @@
-.page-header {
-  $header-border-color: getColor(deep-blue);
-
-  @extend .padding-lateral-large;
-  @extend .text-white;
-  padding: 9px 31px 0;
-  background    : getColor(sky-blue);
-  border-bottom : 1px solid $header-border-color;
-  height: 52px;
-  text-align    : justify;
-
-  &:after {
-    background  : red;
-    content     : "";
-    display     : inline-block;
-    font-size   : 0px;
-    height      : 0px;
-    line-height : 0px;
-    width       : 100%;
+.pure-menu.pure-menu-open.sprint-header{
+  border           : 0;
+  background-color : getColor(crema-tren);
+  .menu-content{
+    margin : 0px 15px;
+    height : 50px;
   }
+}
 
-  .logo {
-    @extend .background-sky-blue;
-    @extend .circle;
-    box-shadow: 0px 4px 6px -5px getColor('dark-gray');
-    display: inline-block;
-    float: left;
-    padding: 8px;
-    position: relative;
-    top: -10px;
-    left: -12px;
-    margin-right: 3px;
-    margin-bottom: -22px;
-    z-index: 1;
+.menu-options{
+  width      : 100%;
+  background : #444344;
+  position   : fixed;
+  z-index    : -9;
+}
+
+.menu-here{
+  width      : 100%;
+  position   : fixed;
+  z-index    : -9;
+}
+
+#menu-options-grid{
+  margin :20px 0;
+}
+
+#menu-icon{
+  width  : 38px;
+  margin : 15px 0 0 0;
+  .menu-line{
+    background     : #bf4b4b;
+    width          : 38px;
+    height         : 3px;
+    margin-bottom  : 5px;
   }
+}
 
-  // Inline block all of them!
-  .controls, .brand, .brand .icon-home, .navbar, .navbar li, .search-box, .user-avatar {
-    @include inline-block;
+.rotated-icon{
+  @include transform(rotate(180deg));
+}
+
+.tren-logo{
+  font-family     : $vincent;
+  font-size       : 24px;
+  width           : 100%;
+  display         : block;
+  span{
+    color : #007993;
   }
-
-  // Active class and brand default color.
-  .brand, .navbar {
-    @extend .text-white;
+  p{
+    text-align : center;
+    color      : #bf4b4b;
+    margin     : 14px 0;
   }
+}
 
-  .active{
-    @include border-radius(2px);
-    @extend .border-deep-blue;
-    background : getColor(sky-darkblue);
-    padding: 6px 10px;
-  }
-  
-  // Brand (aka logo).
-  .brand {
-    text-align   : center;
-    text-shadow  : 1px 1px getColor(sky-dark);
-    font-weight: 100;
-    font-size: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 8px;
-  }
+.sprint-log-in{
+  margin:5px 5px 0;
+  display:inline-block;
+  font-size: 0.680em;
+  font-weight: 700;
+  vertical-align: top;
+}
+.login-container{
+  float:right;
+  display:block;
+}
 
-  // Navigation bar.
-  .navbar {
-    margin-top: 4px;
-  }
-  .navbar li {
-    @extend .text-medium;
-    font-weight: 200;
-    padding: 7px 10px;
-    text-shadow  : 1px 1px getColor(sky-dark);
-  }
-  
-  // Search Bar
-  .search-box{
-    @include placeholder(getColor(deep-blue));
-    @extend .border-deep-blue;
-    background : getColor(sky-blue);
-    width: 194px;
-    height: 32px;
-
-    font-size: 15px;
-    font-weight: lighter;
-  }
-
-  // User avatar.
-  #user-avatar-wrapper {
-    @include border-radius-by-corner(0, 2px, 2px, 0);
-    border: 1px solid $header-border-color;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    margin-left: 5px;
-    padding-right: 19px;
-
-    &:hover {
-      #user-dropdown {
-        display: block;
-      }
-    }
-
-    &:after {
-      @include after;
-      @include absolute(12px, 5px, inherit, inherit);
-      @include triangle(bottom, 10px, half, getColor(wet-stone));
-    }
-  }
-
-  #user-dropdown {
-    @include absolute(30px, -1px, inherit, inherit);
-    @include border-radius-by-corner(0, 0, 2px, 2px);
-    @extend .background-lightest-blue;
-
-    border: 1px solid $header-border-color;
-    color: getColor(light-blue);
-    display: none;
-    overflow: hidden;
-    padding: 4px 0;
-    width: 200px;
-    z-index: 1;
+.nav-legend{
+  padding: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.8em;
+  margin: 10px 0 10px 0;
+  letter-spacing: -0.076em;
+}
 
 
+#search-icon-top{
+  margin:15px 0 0 0;
+}
+.sprint-search-icon{
+  width: 20px;
+  height: 20px;
+  display:block;
+  float:right;
+  background: url('../images/search_icon.svg') no-repeat top left;
+  background-size: 20px 20px;
+}
 
-    .dropdown-link {
-      @include border-radius(0);
+.nav-icon{
+  margin:10px auto 0;
+  display: block;
+  height: 35px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
 
-      border: none;
-      cursor: pointer;
-      display: block;
-      font-family: 'proxima-nova';
-      font-size: 14px;
-      font-weight: 400;
-      padding: 5px;
+.nav-box{
+  border-right: 1px solid #000;
+  overflow:auto;
+}
 
-      &:before {
-        font-family: "FontAwesome";
-        margin-right: 5px;
-      }
-
-      &:hover {
-        @extend .background-deep-blue;
-
-        color: getColor(white);
-        display: block;
-      }
-    }
-
-    .active {
-      background-color: getColor(deep-blue) !important;
-      color: getColor(white);
-      cursor: default;
-    }
-
-
-  }
-
-  .user-avatar {
-    @extend .background-wet-stone;
-    border-right: 1px solid $header-border-color;
-    width: 33px;
-    height: 30px;
-    position: relative;
-
-    .user-placeholder {
-      margin: 5px;
-
-    }
-
-  }
-
-  // Reset header link styling.
-   a {
-    color           : inherit;
-    text-decoration : inherit;
-  }
+.nav-box.no-border{
+  border-right:none;
 }

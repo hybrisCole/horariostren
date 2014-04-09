@@ -12,7 +12,7 @@
     width: 150px ;
     height: 150px ;
     border-radius: 5px;
-    background: $sprint-yellow;
+    background-color: getColor(crema-tren);
     opacity: 0.8;
     &:nth-child(2) {
       animation:         rotation1 3s infinite;
