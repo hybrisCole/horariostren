@@ -36,11 +36,8 @@ angular.module('trenesMobile.directives')
           {
             featureType: 'transit.line',
             stylers: [
-              { color:'#BF4B4B',
-                weight: 20,
-                gamma:10,
-                lightness:100
-              }
+              { color:'#BF4B4B'},
+              {  weight: 5}
             ]
           }
         ];
