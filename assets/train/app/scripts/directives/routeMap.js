@@ -30,7 +30,17 @@ angular.module('trenesMobile.directives')
           {
             featureType: 'water',
             stylers: [
-              { color: '#444344' }
+              { color: '#007993' }
+            ]
+          },
+          {
+            featureType: 'transit.line',
+            stylers: [
+              { color:'#BF4B4B',
+                weight: 20,
+                gamma:10,
+                lightness:100
+              }
             ]
           }
         ];
