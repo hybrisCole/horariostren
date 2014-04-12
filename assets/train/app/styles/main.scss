@@ -52,6 +52,7 @@ body {
 }
 .main-cont{
   background : rgba(0, 121, 147, 0.5);
+  //@include transition-anim(-webkit-transform, 2s, ease-in-out);
 }
 
 

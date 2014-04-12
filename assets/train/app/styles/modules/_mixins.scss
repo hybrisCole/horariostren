@@ -24,7 +24,7 @@
   &:-ms-input-placeholder { color: $color }
 }
 
-@mixin transition($property, $time:"", $method:""){
+@mixin transition-anim($property, $time:"", $method:""){
   -webkit-transition : $property #{$time} #{$method};
   -moz-transition    : $property #{$time} #{$method};
   -ms-transition     : $property #{$time} #{$method};
@@ -49,29 +49,29 @@
 }
 
 @mixin border-radius-by-corner($top-left, $top-right, $bottom-right, $bottom-left) {
-  -webkit-border-top-left-radius: $top-left;
-  -moz-border-top-left-radius: $top-left;
-  border-top-left-radius: $top-left;
+  -webkit-border-top-left-radius : $top-left;
+  -moz-border-top-left-radius    : $top-left;
+  border-top-left-radius         : $top-left;
 
-  -webkit-border-top-right-radius: $top-right;
-  -moz-border-top-right-radius: $top-right;
-  border-top-right-radius: $top-right;
+  -webkit-border-top-right-radius : $top-right;
+  -moz-border-top-right-radius    : $top-right;
+  border-top-right-radius         : $top-right;
 
-  -webkit-border-bottom-right-radius: $bottom-right;
-  -moz-border-bottom-right-radius: $bottom-right;
-  border-bottom-right-radius: $bottom-right;
+  -webkit-border-bottom-right-radius : $bottom-right;
+  -moz-border-bottom-right-radius    : $bottom-right;
+  border-bottom-right-radius         : $bottom-right;
 
-  -webkit-border-bottom-left-radius: $bottom-left;
-  -moz-border-bottom-left-radius: $bottom-left;
-  border-bottom-left-radius: $bottom-left;
+  -webkit-border-bottom-left-radius  : $bottom-left;
+  -moz-border-bottom-left-radius     : $bottom-left;
+  border-bottom-left-radius          : $bottom-left;
 }
 
 @mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
-  position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+  position : absolute;
+  top      : $top;
+  right    : $right;
+  bottom   : $bottom;
+  left     : $left;
 }
 
 @mixin headline-base {
@@ -81,8 +81,8 @@
 @mixin icon-before($sprite) {
   &:before {
     //@include use-sprite($sprite);
-    content: "";
-    display: block;
+    content : "";
+    display : block;
   }
 
 }
@@ -91,18 +91,23 @@
   &:after {
     @include inline-block;
     @include transform($transform);
-    background: inherit;
-    border: inherit;
-    border-right: none;
-    border-top: none;
-    content: "";
-    height: $height;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
-    position: absolute;
-
-    width      : $arrow-width * 2;
+    background   : inherit;
+    border       : inherit;
+    border-right : none;
+    border-top   : none;
+    content      : "";
+    height       : $height;
+    top          : $top;
+    right        : $right;
+    bottom       : $bottom;
+    left         : $left;
+    position     : absolute;
+    width        : $arrow-width * 2;
   }
+}
+
+@mixin translate-anim($x-axis:0px, $y-axis:0px){
+  -ms-transform     : translate($x-axis,$y-axis); /* IE 9 */
+  -webkit-transform : translate($x-axis,$y-axis); /* Chrome, Safari, Opera */
+  transform         : translate($x-axis,$y-axis);
 }

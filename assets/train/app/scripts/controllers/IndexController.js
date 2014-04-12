@@ -4,7 +4,8 @@ angular.module('trenesMobile.controllers')
 	.controller('IndexCtrl', ['$scope','HomeData','User',
 		function ($scope,HomeData,User){
 		$scope.paradas  = HomeData.paradasData;
-    $scope.rutas  = HomeData.rutasData;
+    $scope.rutas    = HomeData.rutasData;
+    $scope.horario  = HomeData.horariosData;
 		$scope.showDrop = false;
   	$scope.slide = '';
   	$scope.showClosestSprintStore = true;
@@ -22,12 +23,36 @@ angular.module('trenesMobile.controllers')
 
     $scope.near = nearMe[0];
 
+    var horarioParada = _.where($scope.horario, {'parada':idNearParada[0].id});
+
+    var horarioList = _.map(horarioParada, function(hora){
+      var numberPattern = /\d+/g,
+          horas     = hora.tiempo.match(numberPattern)[0],
+          minutos   = hora.tiempo.match(numberPattern)[1],
+          now       = moment(),
+          rutasHour = moment(''+horas+':'+minutos+'','HH:mm'), 
+          dif = moment.duration(now - rutasHour).asMinutes(),
+          rout = _.where($scope.rutas, {'id':hora.ruta});
+
+      var data_obj = {
+          'horaID'     : hora.id,
+          'diferencia' : dif,
+          'rutaID'     : hora.ruta,
+          'rutaNombre' : rout[0].nombre,
+          'tiempo'     : hora.tiempo
+      };
+      return data_obj;
+    });
+
+    var lowestHour = _.min(_.pluck(horarioList, 'diferencia'));
+    $scope.lowHourObj = _.where(horarioList, {'diferencia':lowestHour});
+    
     // http://es.wikipedia.org/wiki/F%C3%B3rmula_del_Haversine
     function haversine(p1, p2){
       var distObj = _.map(p1, function(data){
-        var R = 6371;
-        var dLat  = rad(p2.latitude - data.lat);
-        var dLong = rad(p2.longitude - data.lng);
+        var R = 6371,
+            dLat  = rad(p2.latitude - data.lat),
+            dLong = rad(p2.longitude - data.lng);
 
         var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
             Math.cos(rad(data.lat)) * Math.cos(rad(p2.latitude)) * Math.sin(dLong/2) * Math.sin(dLong/2);
@@ -44,5 +69,4 @@ angular.module('trenesMobile.controllers')
     };
 
     function rad(x) { return x * Math.PI / 180 };
-
   }]);

@@ -53,10 +53,19 @@ $colors :
   crema-tren #F2EFDC,
   rojo-tren #BF4B4B;
 
-
+@font-face {
+  font-family: 'vincentregular';
+  src: url('../fonts/vincent-regular-webfont.eot');
+  src: url('../fonts/vincent-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/vincent-regular-webfont.woff') format('woff'),
+  url('../fonts/vincent-regular-webfont.ttf') format('truetype'),
+  url('../fonts/vincent-regular-webfont.svg#vincentregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // Font configuration.
-$vincent : 'vincentregular';
+$vincent           : 'vincentregular';
 $font-primary      : "proxima-nova",sans-serif;
 $font-sizes        :
   xx-small 10px,

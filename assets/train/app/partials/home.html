@@ -11,7 +11,11 @@
                   <strong>ESTACION MAS CERCANA</strong>
                 </p>
                 <p class="closest-sprint-store-copy-2">{{near.nombre}}</p>
-                <p class="closest-sprint-store-copy-2">Proximo Tren: 9AM - 8PM</p>
+                <p class="closest-sprint-store-copy-2"><strong>Proximo Trenes:<strong/></p>
+                <span ng-repeat="lowHour in lowHourObj">
+                  <p class="closest-sprint-store-copy-2">Hora : {{lowHour.tiempo}}</p>
+                  <p class="closest-sprint-store-copy-2">Ruta : {{lowHour.rutaNombre}}</p>
+                </span>
               </a>
             </div>
             <div class="pure-u-1-5">

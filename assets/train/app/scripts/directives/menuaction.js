@@ -33,20 +33,16 @@ angular.module('trenesMobile.directives',[])
         
         // functions 
         function close(){
-          holeDoc.find('.main-cont').animate({marginLeft : "0px"}, 500);
-          menuBar.animate(
-            {marginLeft : "0px"}, 
-            500,
-            function() {
-              menuhere.removeClass('menu-options');  
-            }
-          );
+          holeDoc.find('.main-cont').transition({ x: 0 },500);
+          menuBar.transition({ x: 0 }, 500, function(){
+            menuhere.removeClass('menu-options');
+          });
           menuOpen = false;
         }
 
         function open(){
-          holeDoc.find('.main-cont').animate({marginLeft : getPadd+"px"}, 500);
-          menuBar.animate({marginLeft : getPadd+"px"}, 500);
+          holeDoc.find('.main-cont').transition({ x: getPadd }, 500);
+          menuBar.transition({ x: getPadd }, 500);
           menuhere.addClass('menu-options');
           menuOpen = true;
         }
