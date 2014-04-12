@@ -31,9 +31,8 @@ angular.module('trenesMobile.controllers')
           minutos   = hora.tiempo.match(numberPattern)[1],
           now       = moment(),
           rutasHour = moment(''+horas+':'+minutos+'','HH:mm'), 
-          dif = moment.duration(now - rutasHour).asMinutes(),
-          rout = _.where($scope.rutas, {'id':hora.ruta});
-
+          dif       = Math.abs(moment.duration(now - rutasHour).asMinutes()),
+          rout      = _.where($scope.rutas, {'id':hora.ruta});
       var data_obj = {
           'horaID'     : hora.id,
           'diferencia' : dif,
