@@ -84,13 +84,6 @@ angular.module('trenesMobile.directives')
   				}
 				});
 
-        //Calculando la distancia entre los dos puntos...
-        var bounds = new google.maps.LatLngBounds ();
-        _.each(scope.objmap.markers, function(marker){
-          bounds.extend(new google.maps.LatLng (marker.latitude,marker.longitude));
-        });
-        map.map.fitBounds(bounds);
-
 				function runMarkers(markers){
 					_.each(markers, function(marker){
 							map.addMarker({
@@ -105,7 +98,13 @@ angular.module('trenesMobile.directives')
 				}
         //forzando el mapa a pintarse
         $timeout(function(){
-          google.maps.event.trigger(map.map, 'resize');console.log('resize');
+          //Calculando la distancia entre los dos puntos...
+          google.maps.event.trigger(map.map, 'resize');
+          var bounds = new google.maps.LatLngBounds ();
+          _.each(scope.objmap.markers, function(marker){
+            bounds.extend(new google.maps.LatLng (marker.latitude,marker.longitude));
+          });
+          map.map.fitBounds(bounds);
         },100);
       }
     };
