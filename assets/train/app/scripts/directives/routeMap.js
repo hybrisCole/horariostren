@@ -26,7 +26,6 @@ angular.module('trenesMobile.directives')
               {invert_lightness:true}
             ]
           },
-
           {
             featureType: 'water',
             stylers: [
@@ -57,8 +56,6 @@ angular.module('trenesMobile.directives')
 
         map.map.setOptions(mapOptions);
         map.map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
-
-        map.setZoom(16);
 
 				runMarkers(scope.objmap.markers);
 
