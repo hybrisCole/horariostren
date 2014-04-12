@@ -69,7 +69,6 @@ angular.module('trenesMobile.directives')
   				step: function(e){
   					$('#instructions').append('<li>'+e.instructions+'</li>');
             $('#instructions li:eq('+e.step_number+')').delay(550*e.step_number).fadeIn(200, function(){
-              map.setCenter(e.end_location.lat(), e.end_location.lng());
               map.drawPolyline({
                 path: e.path,
                 strokeColor: '#BF4B4B',
@@ -79,6 +78,13 @@ angular.module('trenesMobile.directives')
             });
   				}
 				});
+
+        //Calculando la distancia entre los dos puntos...
+        var bounds = new google.maps.LatLngBounds ();
+        _.each(scope.objmap.markers, function(marker){
+          bounds.extend(new google.maps.LatLng (marker.latitude,marker.longitude));
+        });
+        map.map.fitBounds(bounds);
 
 				function runMarkers(markers){
 					_.each(markers, function(marker){
