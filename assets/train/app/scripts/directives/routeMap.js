@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.directives')
-  .directive('routeMap',['$interval', function ($interval) {
+  .directive('routeMap',['$interval','$timeout', function ($interval,$timeout) {
     return {
       scope: {
         objmap : '='
@@ -13,8 +13,6 @@ angular.module('trenesMobile.directives')
     			lat     : scope.objmap.markers[1].latitude,
     			lng     : scope.objmap.markers[1].longitude
 				});
-
-
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(scope.objmap.markers[1].latitude, scope.objmap.markers[1].longitude),
           title: 'Your Location',
@@ -105,6 +103,10 @@ angular.module('trenesMobile.directives')
 						});
 					});
 				}
+        //forzando el mapa a pintarse
+        $timeout(function(){
+          google.maps.event.trigger(map.map, 'resize');console.log('resize');
+        },100);
       }
     };
   }]);
