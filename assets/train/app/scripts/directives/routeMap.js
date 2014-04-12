@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.directives')
-  .directive('routeMap',['$interval', function ($interval) {
+  .directive('routeMap',['$interval','$timeout', function ($interval,$timeout) {
     return {
       scope: {
         objmap : '='
@@ -13,6 +13,14 @@ angular.module('trenesMobile.directives')
     			lat     : scope.objmap.markers[1].latitude,
     			lng     : scope.objmap.markers[1].longitude
 				});
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(scope.objmap.markers[1].latitude, scope.objmap.markers[1].longitude),
+          title: 'Your Location',
+          draggable: true,
+          map: map.map
+        });
+
+        map.map.setCenter(marker.getPosition());
 
         var MY_MAPTYPE_ID = 'custom_style';
 
@@ -26,7 +34,6 @@ angular.module('trenesMobile.directives')
               {invert_lightness:true}
             ]
           },
-
           {
             featureType: 'water',
             stylers: [
@@ -58,8 +65,6 @@ angular.module('trenesMobile.directives')
         map.map.setOptions(mapOptions);
         map.map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 
-        map.setZoom(16);
-
 				runMarkers(scope.objmap.markers);
 
 				map.travelRoute({
@@ -79,13 +84,6 @@ angular.module('trenesMobile.directives')
   				}
 				});
 
-        //Calculando la distancia entre los dos puntos...
-        var bounds = new google.maps.LatLngBounds ();
-        _.each(scope.objmap.markers, function(marker){
-          bounds.extend(new google.maps.LatLng (marker.latitude,marker.longitude));
-        });
-        map.map.fitBounds(bounds);
-
 				function runMarkers(markers){
 					_.each(markers, function(marker){
 							map.addMarker({
@@ -98,6 +96,16 @@ angular.module('trenesMobile.directives')
 						});
 					});
 				}
+        //forzando el mapa a pintarse
+        $timeout(function(){
+          //Calculando la distancia entre los dos puntos...
+          google.maps.event.trigger(map.map, 'resize');
+          var bounds = new google.maps.LatLngBounds ();
+          _.each(scope.objmap.markers, function(marker){
+            bounds.extend(new google.maps.LatLng (marker.latitude,marker.longitude));
+          });
+          map.map.fitBounds(bounds);
+        },100);
       }
     };
   }]);
