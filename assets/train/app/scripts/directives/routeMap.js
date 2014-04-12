@@ -14,6 +14,16 @@ angular.module('trenesMobile.directives')
     			lng     : scope.objmap.markers[1].longitude
 				});
 
+
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(scope.objmap.markers[1].latitude, scope.objmap.markers[1].longitude),
+          title: 'Your Location',
+          draggable: true,
+          map: map.map
+        });
+
+        map.map.setCenter(marker.getPosition());
+
         var MY_MAPTYPE_ID = 'custom_style';
 
         var featureOpts = [
