@@ -1,30 +1,26 @@
 'use strict';
 
 angular.module('trenesMobile.services')
-  .factory('storageWrapper', ['$q','$http',function ($q, $http) {
+  .factory('storageWrapper', ['$q','$http','$cacheFactory',function ($q, $http,$cacheFactory) {
     return {
-      getData: function (localStorageKey,getUrl) {
-        var defer = $q.defer();
-        if(Modernizr.localstorage){
-          var localStorageData = JSON.parse(localStorage.getItem(localStorageKey));
-          if(_.isNull(localStorageData)){
-            $http.get(getUrl).success(function(data){
-              localStorage.setItem(localStorageKey,JSON.stringify(data));
-              defer.resolve(data);
-            }).error(function(data){
-              defer.reject(data);
-            });
-          }else{
-            defer.resolve(localStorageData)
-          }
-        //No local storage, just doing REST call.....
+      getData: function (cacheKey,getUrl) {
+        var defer = $q.defer(),
+            cache;
+        if(_.isUndefined($cacheFactory.get('tren-factory'))){
+          cache = $cacheFactory('tren-factory');
         }else{
-          console.log('ERROR: localStorage not available...');
+          cache = $cacheFactory.get('tren-factory');
+        }
+        if(_.isUndefined(cache.get(cacheKey))){
           $http.get(getUrl).success(function(data){
+            cache.put(cacheKey,data);
             defer.resolve(data);
           }).error(function(data){
             defer.reject(data);
           });
+        }else{
+          console.log(cache.get(cacheKey));
+          defer.resolve(cache.get(cacheKey));
         }
         return defer.promise;
       }

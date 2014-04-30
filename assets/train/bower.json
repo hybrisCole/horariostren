@@ -12,8 +12,8 @@
     "jquery": "2.1.0",
     "lodash": "2.4.1",
     "gmaps": "0.4.11",
-    "jquery.transit": "~0.9.9",
-    "momentjs": "~2.5.1"
+    "jquery.transit": "0.9.9",
+    "momentjs": "2.5.1"
   },
   "devDependencies": {}
 }
