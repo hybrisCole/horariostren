@@ -10,7 +10,7 @@
                 <p class="closest-sprint-store-copy">
                   <strong>ESTACION MAS CERCANA</strong>
                 </p>
-                <p class="closest-sprint-store-copy-2">{{near.nombre}} a {{dist}} KM</p>
+                <p class="closest-sprint-store-copy-2">{{near.nombre}} en {{hurryUp._data.hours}}h:{{hurryUp._data.minutes}}m:{{hurryUp._data.seconds}}:s</p>
                 <p class="closest-sprint-store-copy-2"><strong>Proximo Tren:<strong></strong></p>
                 <span ng-repeat="lowHour in lowHourObj">
                   <p class="closest-sprint-store-copy-2">Hora : {{lowHour.tiempo}}</p>
