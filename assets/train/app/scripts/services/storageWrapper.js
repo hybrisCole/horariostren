@@ -5,11 +5,12 @@ angular.module('trenesMobile.services')
     return {
       getData: function (cacheKey,getUrl) {
         var defer = $q.defer(),
-            cache;
-        if(_.isUndefined($cacheFactory.get('tren-factory'))){
-          cache = $cacheFactory('tren-factory');
+            cache,
+            cacheFactoryName = 'tren-factory';
+        if(_.isUndefined($cacheFactory.get(cacheFactoryName))){
+          cache = $cacheFactory(cacheFactoryName);
         }else{
-          cache = $cacheFactory.get('tren-factory');
+          cache = $cacheFactory.get(cacheFactoryName);
         }
         if(_.isUndefined(cache.get(cacheKey))){
           $http.get(getUrl).success(function(data){
@@ -19,7 +20,6 @@ angular.module('trenesMobile.services')
             defer.reject(data);
           });
         }else{
-          console.log(cache.get(cacheKey));
           defer.resolve(cache.get(cacheKey));
         }
         return defer.promise;
