@@ -8,7 +8,8 @@ angular.module('trenesMobile.services')
       getUserPos:function(){
         var defer = $q.defer();
         if ($window.navigator && $window.navigator.geolocation) {
-          $window.navigator.geolocation.getCurrentPosition(function(position){
+          $window.navigator.geolocation.watchPosition(function(position){
+            alert(position);
             $rootScope.$apply(function(){
               defer.resolve(position);
             });
