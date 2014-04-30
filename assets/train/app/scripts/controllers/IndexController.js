@@ -7,17 +7,12 @@ angular.module('trenesMobile.controllers')
     $scope.rutas    = HomeData.rutasData;
     $scope.horario  = HomeData.horariosData;
 		$scope.showDrop = false;
-  	$scope.slide = '';
+  	$scope.slide    = '';
   	$scope.showClosestSprintStore = true;
 
   	$scope.closeSprintStoreLocation = function(){
     	$scope.showClosestSprintStore = false;
   	}
-
-    /*
-    *
-    * */
-
 
     //TODO: Tirar esto a un servicio
     var distances = haversine($scope.paradas, User.coords),
