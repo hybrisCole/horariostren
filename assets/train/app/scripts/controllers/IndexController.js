@@ -12,8 +12,13 @@ angular.module('trenesMobile.controllers')
 
   	$scope.closeSprintStoreLocation = function(){
     	$scope.showClosestSprintStore = false;
-  	}
+  	};
 
+    var horaActual = moment().hours()
+      , horariosActuales = _.filter($scope.horario,function(horario){
+      return _.parseInt(horario.tiempo.split(':')[0]) === horaActual;
+    });
+    console.log(horariosActuales);
     //TODO: Tirar esto a un servicio
     var distances = haversine($scope.paradas, User.coords),
         lowest = _.min(_.pluck(distances, "distance")),
