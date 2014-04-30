@@ -115,7 +115,7 @@ angular.module('trenesMobile.directives')
           });
           //Calculando la distancia entre los dos puntos para ajustar el zoom del mapa...
           map.map.fitBounds(bounds);
-          console.log(map.markers);
+          console.log(map);
         },100);
       }
     };

@@ -22,11 +22,6 @@ angular.module('trenesMobile.controllers')
         {
           latitude  : userPos.latitude,
           longitude : userPos.longitude,
-          name      : 'userStatic'
-        },
-        {
-          latitude  : 9.934727,
-          longitude :  -84.049285,
           name      : 'userWatcher'
         }
       ]
