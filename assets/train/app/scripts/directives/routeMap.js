@@ -98,12 +98,12 @@ angular.module('trenesMobile.directives')
 				}
         //forzando el mapa a pintarse
         $timeout(function(){
-          //Calculando la distancia entre los dos puntos...
           google.maps.event.trigger(map.map, 'resize');
           var bounds = new google.maps.LatLngBounds ();
           _.each(scope.objmap.markers, function(marker){
             bounds.extend(new google.maps.LatLng (marker.latitude,marker.longitude));
           });
+          //Calculando la distancia entre los dos puntos para ajustar el zoom del mapa...
           map.map.fitBounds(bounds);
         },100);
       }
