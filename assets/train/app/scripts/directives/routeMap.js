@@ -13,6 +13,7 @@ angular.module('trenesMobile.directives')
     			lat     : scope.objmap.markers[1].latitude,
     			lng     : scope.objmap.markers[1].longitude
 				});
+        
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(scope.objmap.markers[1].latitude, scope.objmap.markers[1].longitude),
           title: 'Your Location',
@@ -83,17 +84,26 @@ angular.module('trenesMobile.directives')
             });
   				}
 				});
+        
+        var userMarker = _.where(map.markers, { 'title':'userWatcher' });
+        
+        var positionTimer = navigator.geolocation.watchPosition(
+          function( position ){  
+            var newMarker = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+            userMarker.setPosition(newMarker);     
+          }
+        );
 
 				function runMarkers(markers){
 					_.each(markers, function(marker){
 							map.addMarker({
-  						lat: marker.latitude,
-  						lng: marker.longitude,
-  						title: 'Lima',
-  						click: function(e) {
-    						alert('You clicked in this marker');
-  						}
-						});
+  						  lat: marker.latitude,
+  						  lng: marker.longitude,
+  						  title: marker.name,
+  						  click: function(e) {
+    						  alert('You clicked in this marker');
+  						  }
+						  });
 					});
 				}
         //forzando el mapa a pintarse
@@ -105,6 +115,7 @@ angular.module('trenesMobile.directives')
           });
           //Calculando la distancia entre los dos puntos para ajustar el zoom del mapa...
           map.map.fitBounds(bounds);
+          console.log(map.markers);
         },100);
       }
     };
