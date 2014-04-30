@@ -90,7 +90,8 @@ angular.module('trenesMobile.directives')
         var positionTimer = navigator.geolocation.watchPosition(
           function( position ){  
             var newMarker = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-            userMarker.setPosition(newMarker);     
+            userMarker.setPosition(newMarker);    
+             
           }
         );
 
