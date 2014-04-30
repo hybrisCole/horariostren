@@ -10,16 +10,24 @@ angular.module('trenesMobile.controllers')
     $scope.map = {
     	center : {
         latitude  : currentParada[0].lat,
-        longitude : currentParada[0].lng
+        longitude : currentParada[0].lng,
+        name      : 'paradaStatic'
     	},
     	markers : [
         {
           latitude  : currentParada[0].lat,
-          longitude : currentParada[0].lng
+          longitude : currentParada[0].lng,
+          name      : 'paradaStatic'
         },
         {
           latitude  : userPos.latitude,
-          longitude : userPos.longitude
+          longitude : userPos.longitude,
+          name      : 'userStatic'
+        },
+        {
+          latitude  : userPos.latitude,
+          longitude : userPos.longitude,
+          name      : 'userWatcher'
         }
       ]
 		};
