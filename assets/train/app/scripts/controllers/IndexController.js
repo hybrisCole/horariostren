@@ -14,6 +14,10 @@ angular.module('trenesMobile.controllers')
     	$scope.showClosestSprintStore = false;
   	}
 
+    /*
+    *
+    * */
+
 
     //TODO: Tirar esto a un servicio
     var distances = haversine($scope.paradas, User.coords),
