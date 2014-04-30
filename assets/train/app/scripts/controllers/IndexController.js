@@ -22,6 +22,7 @@ angular.module('trenesMobile.controllers')
         nearMe = _.where($scope.paradas, {'id':idNearParada[0].id});
 
     $scope.near = nearMe[0];
+    $scope.dist = Math.floor(lowest * 100) / 100
 
     var horarioParada = _.where($scope.horario, {'parada':idNearParada[0].id});
 
