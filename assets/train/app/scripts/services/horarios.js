@@ -34,8 +34,7 @@ angular.module('trenesMobile.services')
           minutoActual = moment().minutes(),
           horaActual = moment().hours(),
           horaCorrespondencia = correspondenciaDeHoras[horaActual],
-          rangoDeMinutosActual = [0,15];
-
+          rangoDeMinutosActual = correspondenciaDeMinutos["0"];
         /**
          * Si estamos en la misma hora sin correspondencias,
          * sacar el calculo de minutos, si estamos antes nada
@@ -48,6 +47,15 @@ angular.module('trenesMobile.services')
               rangoDeMinutosActual = rangoDeMiutos;
             }
           });
+        }
+
+        /*No hay trenes al inicio de las 15...*/
+        if(horaCorrespondencia===15 && horaActual!==15){
+          rangoDeMinutosActual = correspondenciaDeMinutos["30"];
+        }
+        /*No hay trenes al final de las 20...*/
+        if(horaCorrespondencia===20 && minutoActual>30){
+          rangoDeMinutosActual = correspondenciaDeMinutos["15"];
         }
         this.getHorarios().then(function(horarios){
           var horariosActuales = _.filter(horarios,function(horario){
