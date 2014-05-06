@@ -43,8 +43,8 @@ angular.module('trenesMobile.services')
         */
         if(horaActual === horaCorrespondencia){
           _.each(correspondenciaDeMinutos,function(rangoDeMiutos){
-            if((minutoActual > rangoDeMiutos[0]) &&
-              (minutoActual < rangoDeMiutos[1])){
+            if((minutoActual >= rangoDeMiutos[0]) &&
+              (minutoActual <= rangoDeMiutos[1])){
               rangoDeMinutosActual = rangoDeMiutos;
             }
           });
