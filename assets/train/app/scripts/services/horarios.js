@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.services')
-  .factory('horarios', function (storageWrapper,paradas,$q) {
+  .factory('horarios', ['storageWrapper','paradas','$q',function (storageWrapper,paradas,$q) {
 
     /*"Si son las 3, mas bien mostrar las paradas de las 5... "
     * "Si son las 7, mas bien mostrar las paradas de las 7... "
@@ -80,4 +80,4 @@ angular.module('trenesMobile.services')
         return defer.promise;
       }
     };
-  });
+  }]);

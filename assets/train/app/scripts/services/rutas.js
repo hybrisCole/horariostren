@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.services')
-  .factory('rutas', function (storageWrapper,horarios,$q) {
+  .factory('rutas', ['storageWrapper','horarios','$q',function (storageWrapper,horarios,$q){
     return {
       getRutas: function () {
         return storageWrapper.getData('rutas','http://horarios-tren-data.nodejitsu.com/ruta');
@@ -19,4 +19,4 @@ angular.module('trenesMobile.services')
         return defer.promise;
       }
     };
-  });
+  }]);

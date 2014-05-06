@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.controllers')
-	.controller('IndexCtrl', function ($scope,HomeData,User,$interval){
+  .controller('IndexCtrl',['$scope','HomeData','User','$interval',function ($scope,HomeData,User,$interval){
 		$scope.paradas  = HomeData.paradasData;
     $scope.rutas    = HomeData.rutasData;
     $scope.horario  = HomeData.horariosData;
@@ -73,4 +73,4 @@ angular.module('trenesMobile.controllers')
     };
 
     function rad(x) { return x * Math.PI / 180 };
-  });
+  }]);

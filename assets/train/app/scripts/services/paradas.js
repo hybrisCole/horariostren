@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.services',[])
-  .factory('paradas',function (storageWrapper,$q) {
+  .factory('paradas',['storageWrapper','$q',function (storageWrapper,$q) {
     return {
       getParadas: function () {
         return storageWrapper.getData('paradas','http://horarios-tren-data.nodejitsu.com/parada');
@@ -28,4 +28,4 @@ angular.module('trenesMobile.services',[])
       }
 
     };
-  });
+  }]);
