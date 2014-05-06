@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.services')
-  .factory('horarios', function (storageWrapper,$q) {
+  .factory('horarios', function (storageWrapper,paradas,$q) {
 
     /*"Si son las 3, mas bien mostrar las paradas de las 5... "
     * "Si son las 7, mas bien mostrar las paradas de las 7... "
@@ -59,13 +59,23 @@ angular.module('trenesMobile.services')
         }
         this.getHorarios().then(function(horarios){
           var horariosActuales = _.filter(horarios,function(horario){
-                var tiempoSplit = horario.tiempo.split(':'),
-                    minutoSplit = _.parseInt(tiempoSplit[1]);
-              return ((_.parseInt(tiempoSplit[0]) === horaCorrespondencia)
-                &&(minutoSplit > rangoDeMinutosActual[0] &&
-                   minutoSplit < rangoDeMinutosActual[1]));
+            var tiempoSplit = horario.tiempo.split(':'),
+                minutoSplit = _.parseInt(tiempoSplit[1]);
+            return ((_.parseInt(tiempoSplit[0]) === horaCorrespondencia)
+              &&(minutoSplit > rangoDeMinutosActual[0] &&
+                 minutoSplit < rangoDeMinutosActual[1]));
+          });
+          paradas.filtrar(_.pluck(horariosActuales,'parada')).
+            then(function(paradasObj){
+              _.each(horariosActuales,function(horario){
+                horario.parada = _.find(paradasObj,function(parada){
+                  return parada.id === horario.parada;
+                });
+              });
+
+              //enviando los horarios ordenamos por rutas...
+              defer.resolve(_.groupBy(horariosActuales,function(horario){return horario.ruta;}));
             });
-            defer.resolve(horariosActuales);
         });
         return defer.promise;
       }
