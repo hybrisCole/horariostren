@@ -27,7 +27,7 @@ angular.module('trenesMobile', [
           HomeData :['rutas','paradas','horarios','$q',function(rutas,paradas,horarios, $q) {
             var defer = $q.defer();
             paradas.getParadas().then(function(paradasData){
-              rutas.getRutas().then(function(rutasData){
+              rutas.getRutasConHorariosActuales().then(function(rutasData){
                 horarios.getHorarios().then(function(horariosData){
                   defer.resolve({rutasData:rutasData,paradasData:paradasData,horariosData:horariosData});
                 });

@@ -29,10 +29,10 @@ angular.module('trenesMobile.services')
       * Luego verifica en bloques de 15 minutos para la hora actual.
       *
       * */
-      horariosActuales: function(){
+      getHorariosActuales: function(){
         var defer = $q.defer(),
-          minutoActual = moment().minutes(),
           horaActual = moment().hours(),
+          minutoActual = moment().minutes(),
           horaCorrespondencia = correspondenciaDeHoras[horaActual],
           rangoDeMinutosActual = correspondenciaDeMinutos["0"];
         /**

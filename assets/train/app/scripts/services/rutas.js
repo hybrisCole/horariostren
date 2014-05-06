@@ -1,10 +1,22 @@
 'use strict';
 
 angular.module('trenesMobile.services')
-  .factory('rutas', ['storageWrapper',function (storageWrapper) {
+  .factory('rutas', function (storageWrapper,horarios,$q) {
     return {
       getRutas: function () {
         return storageWrapper.getData('rutas','http://horarios-tren-data.nodejitsu.com/ruta');
+      },
+      getRutasConHorariosActuales:function(){
+        var defer = $q.defer();
+        this.getRutas().then(function(rutasData){
+          horarios.getHorariosActuales().then(function(horariosActuales){
+            _.each(rutasData,function(ruta){
+              ruta.horariosActuales = horariosActuales[ruta.id] || [];
+            });
+            defer.resolve(rutasData);
+          });
+        });
+        return defer.promise;
       }
     };
-  }]);
+  });

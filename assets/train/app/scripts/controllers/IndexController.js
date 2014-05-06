@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.controllers')
-	.controller('IndexCtrl', function ($scope,HomeData,User,$interval,horarios){
+	.controller('IndexCtrl', function ($scope,HomeData,User,$interval){
 		$scope.paradas  = HomeData.paradasData;
     $scope.rutas    = HomeData.rutasData;
     $scope.horario  = HomeData.horariosData;
@@ -12,10 +12,7 @@ angular.module('trenesMobile.controllers')
 
   	$scope.closeSprintStoreLocation = function(){
     	$scope.showClosestSprintStore = false;
-  	}
-    horarios.horariosActuales().then(function(horariosActuales){
-      console.log(horariosActuales);
-    });
+  	};
     //TODO: Tirar esto a un servicio
     var distances = haversine($scope.paradas, User.coords),
         lowest = _.min(_.pluck(distances, "distance")),
