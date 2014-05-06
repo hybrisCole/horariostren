@@ -30,8 +30,8 @@
     <div class="pure-g" ng-repeat="ruta in rutas">
       <div class="pure-u-1">
         <p class="ruta-header">{{ruta.nombre}}</p>
-        <div ng-repeat="horario in ruta.horarios">
-          {{horario.tiempo}}
+        <div ng-repeat="horario in ruta.horariosActuales">
+          {{horario.tiempo}} -- {{horario.parada.nombre}}
         </div>
         <div class="separador-crema"></div>
       </div>
