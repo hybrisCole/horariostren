@@ -10,6 +10,8 @@ angular.module('trenesMobile.controllers')
   	$scope.showClosestSprintStore = true;
     $scope.hurryUp = {};
 
+    console.log($scope.rutas);
+
   	$scope.closeSprintStoreLocation = function(){
     	$scope.showClosestSprintStore = false;
   	};
