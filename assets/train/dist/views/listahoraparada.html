@@ -1,0 +1,7 @@
+<div class="content horasParadas">
+	<h1>{{currentRuta[0].nombre}}</h1>
+	<span ng-repeat="horaParada in horasParadas">
+		<p>{{horaParada.tiempo}} - <a ng-href="#/near/{{horaParada.paradaId}}">{{horaParada.paradaNombre}}</a></p>
+	</span>
+	
+</div>
