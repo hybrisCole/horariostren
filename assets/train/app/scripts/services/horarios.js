@@ -72,9 +72,13 @@ angular.module('trenesMobile.services')
                   return parada.id === horario.parada;
                 });
               });
-
-              //enviando los horarios ordenamos por rutas...
-              defer.resolve(_.groupBy(horariosActuales,function(horario){return horario.ruta;}));
+              //enviando los horarios ordenados por rutas y sort por hora...
+              defer.resolve(
+                _.groupBy(
+                  _.sortBy(horariosActuales,function(horario){
+                    return parseFloat(horario.tiempo.replace(':',','))
+                  }),function(horario){
+                    return horario.ruta;}));
             });
         });
         return defer.promise;

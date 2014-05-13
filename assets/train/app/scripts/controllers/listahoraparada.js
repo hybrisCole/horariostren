@@ -27,7 +27,6 @@ angular.module('trenesMobile.controllers')
       return data_obj;
 		});
 
-    console.log($scope.currentRuta);
     $scope.horasParadas = _.sortBy(printObj, 'sortHour');
 		
 }]);
