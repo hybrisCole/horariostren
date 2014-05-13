@@ -68,7 +68,7 @@ angular.module('trenesMobile.services')
           paradas.filtrar(_.pluck(horariosActuales,'parada')).
             then(function(paradasObj){
               _.each(horariosActuales,function(horario){
-                horario.parada = _.find(paradasObj,function(parada){
+                horario.paradaObj = _.find(paradasObj,function(parada){
                   return parada.id === horario.parada;
                 });
               });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.services')
-  .factory('rutas', ['storageWrapper','horarios','$q',function (storageWrapper,horarios,$q){
+  .factory('rutas', ['storageWrapper','horarios','$q','$timeout',function (storageWrapper,horarios,$q,$timeout){
     return {
       getRutas: function () {
         return storageWrapper.getData('rutas','http://horarios-tren-data.nodejitsu.com/ruta');
