@@ -6,6 +6,7 @@ angular.module('trenesMobile.services',[])
       getParadas: function () {
         return storageWrapper.getData('paradas','http://horarios-tren-data.nodejitsu.com/parada');
       },
+      
       getParada:function(id){
         var defer = $q.defer();
         this.getParadas().then(function(paradas){
@@ -16,6 +17,7 @@ angular.module('trenesMobile.services',[])
         });
         return defer.promise;
       },
+      
       filtrar: function(ids){
         var defer = $q.defer();
         this.getParadas().then(function(paradas){

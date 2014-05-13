@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trenesMobile.directives')
-  .directive('routeMap',['$interval','$timeout', function ($interval,$timeout) {
+  .directive('routeMap',['$timeout',function ($timeout) {
     return {
       scope: {
         objmap : '='
@@ -17,7 +17,7 @@ angular.module('trenesMobile.directives')
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(scope.objmap.markers[1].latitude, scope.objmap.markers[1].longitude),
           title: 'Your Location',
-          draggable: true,
+          draggable: false,
           map: map.map
         });
 
@@ -87,13 +87,7 @@ angular.module('trenesMobile.directives')
         
         var userMarker = _.where(map.markers, { 'title':'userWatcher' });
         
-        var positionTimer = navigator.geolocation.watchPosition(
-          function(position){  
-            var newMarker = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-            userMarker[0].setPosition(newMarker);   
-          }
-        );
-
+        
 				function runMarkers(markers){
 					_.each(markers, function(marker){
 							map.addMarker({
@@ -115,8 +109,18 @@ angular.module('trenesMobile.directives')
           });
           //Calculando la distancia entre los dos puntos para ajustar el zoom del mapa...
           map.map.fitBounds(bounds);
-          console.log(map);
         },100);
+
+        var positionTimer = navigator.geolocation.watchPosition(
+          function(position){  
+            var newMarker = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+            userMarker[0].setPosition(newMarker);   
+          }
+        );
+
+        scope.$on( "$locationChangeStart", function (event, next, current){
+          navigator.geolocation.clearWatch(positionTimer);
+        });
       }
     };
   }]);

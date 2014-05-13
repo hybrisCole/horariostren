@@ -32,3 +32,32 @@
   height: 1px;
   background-color: getColor(crema-tren);
 }
+
+.no-rutas{
+  margin     : 20px 0 20px 0; 
+  text-align : center;
+  h1{
+    color     : getColor(gris-tren);
+    font-size : 20px; 
+  } 
+  a{
+    font-size       : 16px;
+    color           : getColor(azul-tren); 
+    text-decoration : none; 
+  }
+}
+
+.pure-table-bordered{
+  margin : 0 auto; 
+  border : none;
+  td{
+    border : none;
+  }
+  p{
+    font-size : 18px; 
+  }
+}
+
+.horasParadas{
+  padding-top : 70px; 
+}

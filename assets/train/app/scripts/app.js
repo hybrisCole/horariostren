@@ -52,6 +52,24 @@ angular.module('trenesMobile', [
           User : ['user','$q',geolocFunction]
         }
       })
+      .when('/rutasinfo/:id', {
+        templateUrl: 'views/listahoraparada.html',
+        controller: 'ListahoraparadaCtrl',
+        resolve     : {
+          HomeData :['rutas','paradas','horarios','$q',function(rutas,paradas,horarios, $q) {
+            var defer = $q.defer();
+            paradas.getParadas().then(function(paradasData){
+              rutas.getRutas().then(function(rutasData){
+                horarios.getHorarios().then(function(horariosData){
+                  defer.resolve({rutasData:rutasData,paradasData:paradasData,horariosData:horariosData});
+                });
+              });
+            });
+            return defer.promise;
+          }],
+          User : ['user','$q',geolocFunction]
+        }
+      })
       .otherwise({redirectTo: '/'});
   }]).run(['$rootScope',function($rootScope){
     $rootScope.displayViewChangeOverlay = false;

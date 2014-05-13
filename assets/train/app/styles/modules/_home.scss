@@ -6,20 +6,29 @@
   .pure-g{
     padding : 0 10px; 
     p{
-      color : #F2EFDC;
+      color         : #F2EFDC;
+      font-size     : 14px;
+      margin-bottom : 5px;  
       strong{
-        color : #bf4b4b;
+        color     : #bf4b4b;
+        font-size : 18px; 
       }
     }
     a{
       text-decoration : none; 
+    }
+    .time{
+      span{
+        color : getColor(rojo-tren);
+      }
     }
     .close{
       color        : #bf4b4b;
       position     : absolute;  
       right        : 0; 
       margin-right : 20px;
-      font-weight  : bold; 
+      font-size    : 50px;
+      top          : 60px;
     }
     .like{
       position     : absolute;  
@@ -131,4 +140,5 @@ route-map{
   background-color: getColor(rojo-tren);
   color: getColor(crema-tren);
   font-weight: 700;
+  font-size: 20px;
 }

@@ -8,6 +8,7 @@ angular.module('trenesMobile.directives',[])
       link: function(scope, element, attrs){
       	var innerH   = $window.innerHeight;
         var getPadd  = $window.innerWidth * 0.70;
+        var menuPadd  = $window.innerWidth * 0.30;
       	var menubtn  = element.find('#menu-icon');
       	var menuOpt  = element.find('.menu-options');
         var menuhere = element.find('.menu-here');
@@ -17,6 +18,7 @@ angular.module('trenesMobile.directives',[])
 
       	menuhere.height(innerH);
         menuhere.width(getPadd);
+        menuhere.transition({x : -getPadd},0);
 
       	menubtn.bind('click', function(){
       		if(!(menuOpen)){
@@ -34,16 +36,15 @@ angular.module('trenesMobile.directives',[])
         // functions 
         function close(){
           holeDoc.find('.main-cont').transition({ x: 0 },500);
-          menuBar.transition({ x: 0 }, 500, function(){
-            menuhere.removeClass('menu-options');
-          });
+          menuhere.transition({x: -getPadd}, 500);
+          menuBar.transition({ x: 0 }, 500);
           menuOpen = false;
         }
 
         function open(){
           holeDoc.find('.main-cont').transition({ x: getPadd }, 500);
           menuBar.transition({ x: getPadd }, 500);
-          menuhere.addClass('menu-options');
+          menuhere.transition({x: 0}, 500);
           menuOpen = true;
         }
       }

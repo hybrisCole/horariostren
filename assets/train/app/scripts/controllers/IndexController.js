@@ -1,16 +1,23 @@
 'use strict';
 
 angular.module('trenesMobile.controllers')
-  .controller('IndexCtrl',['$scope','HomeData','User','$interval',function ($scope,HomeData,User,$interval){
-		$scope.paradas  = HomeData.paradasData;
+  .controller('IndexCtrl',[
+    '$scope',
+    'HomeData',
+    'User',
+    '$interval',
+    '$route', 
+    '$routeParams', 
+    '$location',
+    function ($scope,HomeData,User,$interval,$route, $routeParams, $location){
+		
+    $scope.paradas  = HomeData.paradasData;
     $scope.rutas    = HomeData.rutasData;
     $scope.horario  = HomeData.horariosData;
 		$scope.showDrop = false;
   	$scope.slide    = '';
   	$scope.showClosestSprintStore = true;
     $scope.hurryUp = {};
-
-    console.log($scope.rutas);
 
   	$scope.closeSprintStoreLocation = function(){
     	$scope.showClosestSprintStore = false;
@@ -25,9 +32,7 @@ angular.module('trenesMobile.controllers')
     //$scope.dist = Math.floor(lowest * 100) / 100;
 
     var horarioParada = _.where($scope.horario, {'parada':idNearParada[0].id});
-
     
-
     $interval(function() {
         var horarioList = _.map(horarioParada, function(hora){
         var numberPattern = /\d+/g,
@@ -51,6 +56,9 @@ angular.module('trenesMobile.controllers')
    
       $scope.lowHourObj = _.where(horarioList, {'diferencia':lowestHour});
       $scope.hurryUp = moment.duration(lowestHour, "minutes");
+      if($scope.hurryUp._data.hours === 0 && $scope.hurryUp._data.minutes === 0 && $scope.hurryUp._data.seconds < 1){
+        $route.reload();
+      }
     }, 1000);
     
     // http://es.wikipedia.org/wiki/F%C3%B3rmula_del_Haversine
