@@ -1,8 +1,14 @@
 <div class="content horasParadas">
-	<div class="pure-g">
-		<div class="pure-u-1 droppy">
+	<div class="pure-g" ng-click="droppy()">
+		<div class="pure-u-1 droppy titular">
 			<h1 class="pull-left">{{currentRuta[0].nombre}}</h1>
 			<i class="fa fa-angle-double-down pull-right"></i>
+		</div>
+	</div>
+	<div class="pure-g" ng-show="openDroppy">
+		<div class="pure-u-1 droppy" ng-repeat="ruta in rutas" ng-if="ruta.nombre !== currentRuta[0].nombre" ng-click="go('rutasinfo/{{ruta.id}}')">
+			<h1 class="pull-left">{{ruta.nombre}}</h1>
+			<i class="fa fa-angle-double-right pull-right"></i>
 		</div>
 	</div>
 	<div ng-click="go('near/{{horaParada.paradaId}}')" ng-class-odd="'odd'" ng-class-even="'even'" class="pure-g" ng-repeat="horaParada in horasParadas">

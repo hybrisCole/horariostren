@@ -16,7 +16,8 @@ angular.module('trenesMobile', [
     'trenesMobile.directives',
     'ngTouch',
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'fx.animations'
   ]).
   config(['$routeProvider', function ($routeProvider) {
     $routeProvider

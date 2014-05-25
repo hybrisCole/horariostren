@@ -1,12 +1,14 @@
 {
   "name": "amatista-trenes",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
-    "angular": "1.2.9",
-    "angular-route": "1.2.9",
-    "angular-animate": "1.2.9",
-    "angular-touch": "1.2.9",
+    "angular": "1.2.16",
+    "angular-route": "1.2.16",
+    "angular-animate": "1.2.16",
+    "angular-touch": "1.2.16",
     "angular-gestures": "0.2.1",
+    "ng-Fx": "0.4.0",
+    "gsap":"1.11.8",
     "pure": "0.3.0",
     "modernizr": "2.7.2",
     "jquery": "2.1.0",
@@ -14,7 +16,7 @@
     "gmaps": "0.4.11",
     "jquery.transit": "0.9.9",
     "momentjs": "2.5.1",
-    "font-awesome": "~4.1.0"
+    "font-awesome": "4.1.0"
   },
   "devDependencies": {}
 }
