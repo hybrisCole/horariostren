@@ -1,26 +1,10 @@
-.pure-menu.pure-menu-open.sprint-header{
+.pure-menu.pure-menu-open.train-header{
   border           : 0;
   background-color : getColor(crema-tren);
   .menu-content{
     margin : 0px 15px;
     height : 50px;
   }
-}
-
-.menu-options{
-  background : #444344;
-  position   : fixed;
-  z-index    : -9;
-}
-
-.menu-here{
-   background : #444344;
-  position   : fixed;
-  z-index    : -9;
-}
-
-#menu-options-grid{
-  margin :20px 0;
 }
 
 #menu-icon{
@@ -32,10 +16,6 @@
     height         : 3px;
     margin-bottom  : 5px;
   }
-}
-
-.rotated-icon{
-  @include transform(rotate(180deg));
 }
 
 .tren-logo{
@@ -53,53 +33,13 @@
   }
 }
 
-.sprint-log-in{
-  margin:5px 5px 0;
-  display:inline-block;
-  font-size: 0.680em;
-  font-weight: 700;
-  vertical-align: top;
-}
-.login-container{
-  float:right;
-  display:block;
-}
-
-.nav-legend{
-  padding: 0;
-  text-align: center;
-  font-weight: 700;
-  font-size: 0.8em;
-  margin: 10px 0 10px 0;
-  letter-spacing: -0.076em;
+.go-back{
+  @extend .padding-vertical-x-small;
+  @extend .padding-lateral-x-small;
+  float  : right;
+  p{
+    color : getColor(azul-tren);
+  }
 }
 
 
-#search-icon-top{
-  margin:15px 0 0 0;
-}
-.sprint-search-icon{
-  width: 20px;
-  height: 20px;
-  display:block;
-  float:right;
-  background: url('../images/search_icon.svg') no-repeat top left;
-  background-size: 20px 20px;
-}
-
-.nav-icon{
-  margin:10px auto 0;
-  display: block;
-  height: 35px;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-}
-
-.nav-box{
-  border-right: 1px solid #000;
-  overflow:auto;
-}
-
-.nav-box.no-border{
-  border-right:none;
-}

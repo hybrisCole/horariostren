@@ -8,10 +8,13 @@ angular.module('trenesMobile.controllers')
   	function ($scope, $routeParams, HomeData){
   	
   	var currentId   = $routeParams.id;
+    var isOpen      = false;
     
     $scope.paradas  = HomeData.paradasData;
     $scope.rutas    = HomeData.rutasData;
     $scope.horario  = HomeData.horariosData;
+
+    $scope.openDroppy = false;
 
     $scope.currentRuta = _.where($scope.rutas, {'id':currentId});
     $scope.horarioList = _.where($scope.horario, {'ruta':currentId});
@@ -29,4 +32,13 @@ angular.module('trenesMobile.controllers')
 
     $scope.horasParadas = _.sortBy(printObj, 'sortHour');
 		
+    $scope.droppy = function(){
+      if(isOpen === false){
+        isOpen = true;
+        $scope.openDroppy = true;
+      }else{
+        isOpen = false;
+        $scope.openDroppy = false;
+      }
+    }
 }]);
