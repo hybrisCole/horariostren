@@ -2,39 +2,40 @@
   <div class="trenes-content">
     <div class="closest-sprint-store" ng-show="showClosestSprintStore">
       <div class="pure-g">
-        <div class="pure-u-1">
-          <a ng-click="go('near/{{near.id}}')">
-            <p class="closest-sprint-store-copy">
-              <strong>ESTACION MAS CERCANA</strong>
-            </p>
-            <p class="closest-sprint-store-copy-2">{{near.nombre}}</p>
-            <p class="closest-sprint-store-copy-2 time">El tren llega en <span>{{hurryUp._data.hours}}h:{{hurryUp._data.minutes}}m:{{hurryUp._data.seconds}}:s</span> aproximadamente</p>
-            <span ng-repeat="lowHour in lowHourObj">
-              <p class="closest-sprint-store-copy-2 time"><span>Hora :</span> {{lowHour.tiempo}} / <span>Ruta :</span> {{lowHour.rutaNombre}}</p>
-              }
-            </span>
-          </a>
-          <div ng-click="closeSprintStoreLocation()">
-            <div class="close">X</div>
-          </div>
+        <div class="pure-u-1" ng-click="go('near/{{near.id}}')">
+          <p class="closest-sprint-store-copy">
+            <strong>ESTACION MAS CERCANA</strong>
+          </p>
+          <p class="closest-sprint-store-copy-2">{{near.nombre}}</p>
+          <p class="closest-sprint-store-copy-2 time">El tren llega en <span>{{hurryUp._data.hours}}h:{{hurryUp._data.minutes}}m:{{hurryUp._data.seconds}}:s</span> aproximadamente</p>
+          <span ng-repeat="lowHour in lowHourObj">
+            <p class="closest-sprint-store-copy-2 time"><span>Hora :</span> {{lowHour.tiempo}} / <span>Ruta :</span> {{lowHour.rutaNombre}}</p>
+            }
+          </span>
         </div>
       </div>
     </div>
     <div class="pure-g" ng-repeat="ruta in rutas">
       <div class="pure-u-1">
-        <p class="ruta-header">{{ruta.nombre}}</p>
-        <div class="no-rutas" ng-if="ruta.horariosActuales.length === 0">
-          <h1>No hay paradas disponibles</h1>
-          <a ng-href="#/rutasinfo/{{ruta.id}}">ver lista de horarios y paradas de esta ruta</a>
+        <div class="pure-g">
+          <div class="pure-u-4-5">
+            <p class="ruta-header">{{ruta.nombre}}</p>
+            <div class="no-rutas" ng-click="go('rutasinfo/{{ruta.id}}')" ng-if="ruta.horariosActuales.length === 0">
+              <h1>No hay paradas disponibles</h1>
+              <a href="javascript::void();">ver lista de horarios y paradas de esta ruta</a>
+            </div>
+          </div>
+          <div class="pure-u-1-5">
+            <p class="header-link" ng-click="go('rutasinfo/{{ruta.id}}')">>></p>
+          </div>
         </div>
-        <table class="pure-table pure-table-bordered">
-          <tbody>
-            <tr ng-repeat="horario in ruta.horariosActuales">
-              <td><p>Hora : {{horario.tiempo}}</p></td>
-              <td><p>Parada : {{horario.paradaObj.nombre}}</p></td>
-            </tr>
-          <tbody>
-        </tbody></tbody></table>
+      </div>
+      <div class="pure-u-1 horario-proximo-row" ng-repeat="horario in ruta.horariosActuales">
+        <div class="pure-g">
+          <div class="pure-u-4-5">
+            {{horario.tiempo}} {{horario.paradaObj.nombre}}
+          </div>
+        </div>
       </div>
     </div>
   </div>

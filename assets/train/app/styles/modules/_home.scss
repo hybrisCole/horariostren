@@ -140,5 +140,29 @@ route-map{
   background-color: getColor(rojo-tren);
   color: getColor(crema-tren);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.4em;
+}
+
+.header-link{
+  @extend .padding-vertical-medium;
+  @extend .text-center;
+  @extend .text-medium;
+  background-color: getColor(crema-tren);
+  color: getColor(rojo-tren);
+  font-weight: 700;
+  font-size: 1.4em;
+  a{
+    color: getColor(rojo-tren);
+  }
+}
+
+.horario-proximo-row{
+  @extend .padding-small;
+  @extend .text-medium;
+  background-color:getColor(azul-tren);
+  color: getColor(gris-tren);
+  font-weight: 700;
+  font-size: 1.6em;
+  border-bottom: 1px solid;
+  border-bottom-color:getColor(crema-tren);
 }
