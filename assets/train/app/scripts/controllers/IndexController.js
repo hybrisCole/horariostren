@@ -19,9 +19,6 @@ angular.module('trenesMobile.controllers')
   	$scope.showClosestSprintStore = true;
     $scope.hurryUp = {};
 
-  	$scope.closeSprintStoreLocation = function(){
-    	$scope.showClosestSprintStore = false;
-  	};
     //TODO: Tirar esto a un servicio
     var distances = haversine($scope.paradas, User.coords),
         lowest = _.min(_.pluck(distances, "distance")),

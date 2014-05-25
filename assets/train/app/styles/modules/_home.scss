@@ -1,4 +1,4 @@
-.closest-sprint-store{
+.closest-train-stop{
   margin           : 0 -15px;
   background-color : rgba(67,68,67,0.9);
   padding          : 15px 0;
@@ -38,81 +38,16 @@
   }
 }
 
-.closest-sprint-store-copy{
+.closest-train-stop-copy{
   font-size:0.813em;
   margin:0 0 0 30px;
 }
 
-.closest-sprint-store-copy-2{
+.closest-train-stop-copy-2{
   font-size:0.813em;
   margin:0 0 0 30px;
 }
-
-#store-location-icon{
-  float           : left;
-  width           : 20px;
-  height          : 33px;
-  background      : url('../images/locator_image.svg') no-repeat left top;
-  background-size : 20px 33px;
-  margin-top      : 10px;
-}
  
-.paradas{
-  width      : 100%;
-  margin-top : 20px; 
-  .list-cont{
-    background : #BF4B4B;
-    padding    : 0 10px ;
-    max-height : 250px;
-    overflow-y : scroll;  
-  }
-  .main-parada{
-    background : #BF4B4B;
-    color      : #F2EFDC;
-    text-align : center;
-    cursor     : pointer;
-    padding: 20px 0;
-  }
-  .parada{
-    text-align : center;
-    cursor     : pointer;
-    background : #BF4B4B;
-    color      : #F2EFDC; 
-    border-top : solid #F2EFDC 1px;
-  } 
-}
-
-.list-cont{
-  @include transition(0.5s ease-in-out);
-  height : 250px;
-}
-
-.list-cont.ng-hide-add,
-.list-cont.ng-hide-remove {
-  display : block!important;
-}
- 
-.list-cont.ng-hide{
-  height : 0px;
-}
-
-.closest-sprint-store{
-  @include transition(0.5s ease-in-out);
-  opacity    : 1;
-  min-height : 60px;
-  overflow   : hidden; 
-}
-
-.closest-sprint-store.ng-hide-add,
-.closest-sprint-store.ng-hide-remove {
-  display : block!important;
-}
- 
-.closest-sprint-store.ng-hide{
-  height  : 0px;
-  opacity : 0;
-}
-
 route-map{
   display: block;
     width: 100%;
@@ -135,12 +70,25 @@ route-map{
 
 .ruta-header{
   @extend .padding-vertical-medium;
-  @extend .text-center;
   @extend .text-medium;
+  @extend .padding-medium;
   background-color: getColor(rojo-tren);
   color: getColor(crema-tren);
   font-weight: 700;
   font-size: 1.4em;
+}
+
+.no-rutas{ 
+  @extend .padding-medium;
+  h1{
+    color     : getColor(gris-tren);
+    font-size : 20px; 
+  } 
+  a{
+    font-size       : 16px;
+    color           : getColor(azul-tren); 
+    text-decoration : none; 
+  }
 }
 
 .header-link{

@@ -21,7 +21,7 @@ angular.module('trenesMobile', [
   config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl : 'partials/home.html', 
+        templateUrl : 'views/home.html', 
         controller  : 'IndexCtrl',
         resolve     : {
           HomeData :['rutas','paradas','horarios','$q',function(rutas,paradas,horarios, $q) {
