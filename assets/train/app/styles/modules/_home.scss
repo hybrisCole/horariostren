@@ -1,5 +1,8 @@
+.home-view{
+  background-color : getColor(celeste-tren);
+}
 .closest-train-stop{
-  margin           : 0 -15px;
+  margin           : 0 -25px;
   background-color : rgba(67,68,67,0.9);
   padding          : 15px 0;
 
@@ -21,19 +24,6 @@
       span{
         color : getColor(rojo-tren);
       }
-    }
-    .close{
-      color        : #bf4b4b;
-      position     : absolute;  
-      right        : 0; 
-      margin-right : 20px;
-      font-size    : 50px;
-      top          : 60px;
-    }
-    .like{
-      position     : absolute;  
-      right        : 0; 
-      margin-right : 65px; 
     }
   }
 }
@@ -107,10 +97,12 @@ route-map{
 .horario-proximo-row{
   @extend .padding-small;
   @extend .text-medium;
-  background-color:getColor(azul-tren);
   color: getColor(gris-tren);
   font-weight: 700;
-  font-size: 1.6em;
+  font-size: 1.2em;
   border-bottom: 1px solid;
   border-bottom-color:getColor(crema-tren);
+  &:last-child{
+    border-bottom : none;
+  }
 }

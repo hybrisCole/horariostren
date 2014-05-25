@@ -25,11 +25,11 @@
             </div>
           </div>
           <div class="pure-u-1-5">
-            <p class="header-link" ng-click="go('rutasinfo/{{ruta.id}}')"><i class="fa fa-arrow-right"></i></p>
+            <p class="header-link" ng-click="go('rutasinfo/{{ruta.id}}')"><i class="fa fa-arrow-right fa-lg"></i></p>
           </div>
         </div>
       </div>
-      <div class="pure-u-1 horario-proximo-row" ng-repeat="horario in ruta.horariosActuales">
+      <div class="pure-u-1 horario-proximo-row" ng-click="go('near/{{horario.paradaObj.id}}')" ng-repeat="horario in ruta.horariosActuales">
         <div class="pure-g">
           <div class="pure-u-4-5">
             {{horario.tiempo}} {{horario.paradaObj.nombre}}

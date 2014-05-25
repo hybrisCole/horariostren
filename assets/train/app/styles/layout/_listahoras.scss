@@ -1,0 +1,43 @@
+.horasParadas{
+  padding-top      : 50px; 
+  background-color : getColor(celeste-tren);
+  .droppy{
+  	@extend .padding-vertical-large;
+  	@extend .padding-left-medium;
+  	@extend .padding-right-medium;
+  	background-color : getColor(gris-tren);
+  	color            : getColor(rojo-tren);
+  	font-size        : 1.6em;
+  }
+  .hora-parada{
+  	height : 60px; 
+  	.arrow-go{
+  		@extend .padding-vertical-medium;
+  		@extend .text-center;
+ 			@extend .text-medium;
+  	}
+  	.normal{
+  		@extend .padding-vertical-medium;
+  		@extend .padding-left-medium;
+ 			font-size : 1.4em; 
+  	}
+  }
+  .odd {
+  	background-color : getColor(rojo-tren);
+  	.normal{
+  		color : getColor(crema-tren); 
+  	}
+  	.arrow-go{
+  		color : getColor(crema-tren); 
+  	}
+  }
+	.even {
+  	background-color : getColor(celeste-tren);
+  	.normal{
+  		color : getColor(gris-tren); 
+  	}
+  	.arrow-go{
+  		color : getColor(gris-tren); 
+  	}
+	}
+}

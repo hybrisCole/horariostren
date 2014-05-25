@@ -18,8 +18,8 @@
 // Layout components.
 @import "layout/header";
 @import "layout/content";
-
 @import "modules/home";
+@import "layout/listahoras";
 
 @mixin transition($time, $type){
   -webkit-transition : all $time $type;
@@ -34,7 +34,6 @@ body {
   overflow-y : scroll;
 }
 .main-cont{
-  background : rgba(0, 121, 147, 0.5);
   //@include transition-anim(-webkit-transform, 2s, ease-in-out);
 }
 
