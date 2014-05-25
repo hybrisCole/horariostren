@@ -8,6 +8,13 @@
   	background-color : getColor(gris-tren);
   	color            : getColor(rojo-tren);
   	font-size        : 1.6em;
+  	border-bottom    : 1px solid getColor(crema-tren); 
+  	&:first-child{
+  		border-top : 1px solid getColor(crema-tren);
+  	}
+  }
+  .titular{
+  	border : none;
   }
   .hora-parada{
   	height : 60px; 

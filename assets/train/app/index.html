@@ -32,7 +32,7 @@
         </script>
 </head>
 <body ng-controller="MainCtrl" class="sprint-mobile-body">
-  <menuaction></menuaction>   
+  <menuaction back="goBack(path)"></menuaction>   
   <div ng-view ng-class="slideClass" class="main-cont">
   </div>
   <div class="view-change-overlay" ng-show="displayViewChangeOverlay">

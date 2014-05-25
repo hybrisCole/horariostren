@@ -7,14 +7,16 @@ angular.module('trenesMobile.controllers', []).controller('MainCtrl', ['$scope',
     $window.history.back();
   };
 
-  $rootScope.go = function(path){
+  $scope.go = function(path){
     $scope.slideClass = 'slide-left';
     $location.url(path);
+    $rootScope.$broadcast('go');
   };
 
-  $rootScope.goBack = function(path){
+  $scope.goBack = function(path){
     $scope.slideClass = 'slide-right';
     $location.url(path);
+    $rootScope.$broadcast('goBack');
   };
 
 }]);
