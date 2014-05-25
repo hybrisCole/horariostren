@@ -1,7 +1,16 @@
 <div class="content horasParadas">
-	<h1>{{currentRuta[0].nombre}}</h1>
-	<span ng-repeat="horaParada in horasParadas">
-		<p>{{horaParada.tiempo}} - <a ng-href="#/near/{{horaParada.paradaId}}">{{horaParada.paradaNombre}}</a></p>
-	</span>
-	
+	<div class="pure-g">
+		<div class="pure-u-1 droppy">
+			<h1 class="pull-left">{{currentRuta[0].nombre}}</h1>
+			<i class="fa fa-angle-double-down pull-right"></i>
+		</div>
+	</div>
+	<div ng-click="go('near/{{horaParada.paradaId}}')" ng-class-odd="'odd'" ng-class-even="'even'" class="pure-g" ng-repeat="horaParada in horasParadas">
+    <div class="pure-u-4-5 hora-parada">
+				<p class="normal">{{horaParada.tiempo}} - {{horaParada.paradaNombre}}</p>
+    </div>
+    <div class="pure-u-1-5 hora-parada">
+       <p class="arrow-go"><i class="fa fa-arrow-right fa-lg"></i></p>
+    </div>
+  </div>
 </div>
