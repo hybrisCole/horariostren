@@ -1,0 +1,26 @@
+<div class="menu-here">
+  
+</div>
+<div ng-controller="MenuCtrl" class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal train-header">
+  <div class="menu-content">
+    <div class="pure-g nav-icon-row">
+      <div class="pure-u-1-4">
+        <div id="menu-icon" ng-class="{'rotated-icon':navOpen}">
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="tren-logo" ng-click="back({path:'/'})">
+          <p><span>ELTREN</span>.CR</p>
+        </div>
+      </div>
+      <div class="pure-u-1-4">
+        <div ng-show="showBack" class="go-back" ng-click="back({path:goback})">
+          <p><i class="fa fa-reply fa-2x"></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
