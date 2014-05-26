@@ -5,8 +5,8 @@
 			<i class="fa fa-angle-double-down pull-right"></i>
 		</div>
 	</div>
-	<div class="pure-g" ng-show="openDroppy">
-		<div class="pure-u-1 droppy" ng-repeat="ruta in rutas" ng-if="ruta.nombre !== currentRuta[0].nombre" ng-click="go('rutasinfo/{{ruta.id}}')">
+	<div class="pure-g">
+		<div ng-class="anim" class="pure-u-1 droppy fx-easing-back fx-speed-{{ruta.speed}}" ng-repeat="ruta in rutaAmin" ng-if="ruta.nombre !== currentRuta[0].nombre" ng-click="go('rutasinfo/{{ruta.id}}')">
 			<h1 class="pull-left">{{ruta.nombre}}</h1>
 			<i class="fa fa-angle-double-right pull-right"></i>
 		</div>

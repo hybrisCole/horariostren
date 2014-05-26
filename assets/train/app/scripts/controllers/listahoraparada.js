@@ -14,8 +14,6 @@ angular.module('trenesMobile.controllers')
     $scope.rutas    = HomeData.rutasData;
     $scope.horario  = HomeData.horariosData;
 
-    $scope.openDroppy = false;
-
     $scope.currentRuta = _.where($scope.rutas, {'id':currentId});
     $scope.horarioList = _.where($scope.horario, {'ruta':currentId});
 
@@ -34,11 +32,21 @@ angular.module('trenesMobile.controllers')
 		
     $scope.droppy = function(){
       if(isOpen === false){
+        $scope.anim = 'fx-fade-down';
         isOpen = true;
-        $scope.openDroppy = true;
+        var i = 1;
+        $scope.rutaAmin = _.map($scope.rutas, function(ruta){
+          var rutasObj = {
+            nombre : ruta.nombre,
+            id     : ruta.id,
+            speed  : 200 * i++
+          };
+          return rutasObj;
+        });
       }else{
+        $scope.anim = 'fx-fade-up-big';
         isOpen = false;
-        $scope.openDroppy = false;
+        $scope.rutaAmin = [];
       }
     }
 }]);

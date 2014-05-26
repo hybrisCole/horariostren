@@ -8,13 +8,13 @@ angular.module('trenesMobile.controllers', []).controller('MainCtrl', ['$scope',
   };
 
   $scope.go = function(path){
-    $scope.slideClass = 'fx-fade-normal';
+    $scope.slideClass = 'fx-fade-right-big';
     $location.url(path);
     $rootScope.$broadcast('go');
   };
 
   $scope.goBack = function(path){
-    $scope.slideClass = 'fx-fade-normal';
+    $scope.slideClass = 'fx-fade-left-big';
     $location.url(path);
     $rootScope.$broadcast('goBack');
   };
