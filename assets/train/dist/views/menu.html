@@ -1,7 +1,7 @@
 <div class="menu-here">
-    
+  
 </div>
-<div ng-controller="MenuCtrl" class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal sprint-header">
+<div ng-controller="MenuCtrl" class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal train-header">
   <div class="menu-content">
     <div class="pure-g nav-icon-row">
       <div class="pure-u-1-4">
@@ -12,14 +12,13 @@
         </div>
       </div>
       <div class="pure-u-1-2">
-        <div class="tren-logo" ng-click="navOpen = false;goBack('/')">
+        <div class="tren-logo" ng-click="back({path:'/'})">
           <p><span>ELTREN</span>.CR</p>
         </div>
       </div>
       <div class="pure-u-1-4">
-        <div class="login-container" ng-click="navOpen = false;go('/user')">
-          <div class="sprint-log-in"></div>
-          <div id="sign-in-logo"></div>
+        <div ng-show="showBack" class="go-back" ng-click="back({path:goback})">
+          <p><i class="fa fa-reply fa-2x"></i></p>
         </div>
       </div>
     </div>
