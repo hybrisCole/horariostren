@@ -13,9 +13,9 @@ angular.module('trenesMobile.services')
       "19":19,"20":20,"21":5,"22":5,"23":5,"24":5
     },
     correspondenciaDeMinutos = {
-      "0":[0,14],
-      "15":[15,29],
-      "30":[30,44],
+      "0":[0,15],
+      "15":[15,30],
+      "30":[30,45],
       "45":[45,59]
     };
     return {
@@ -62,8 +62,8 @@ angular.module('trenesMobile.services')
             var tiempoSplit = horario.tiempo.split(':'),
                 minutoSplit = _.parseInt(tiempoSplit[1]);
             return ((_.parseInt(tiempoSplit[0]) === horaCorrespondencia)
-              &&(minutoSplit > rangoDeMinutosActual[0] &&
-                 minutoSplit < rangoDeMinutosActual[1]));
+              &&(minutoSplit >= rangoDeMinutosActual[0] &&
+                 minutoSplit <= rangoDeMinutosActual[1]));
           });
           paradas.filtrar(_.pluck(horariosActuales,'parada')).
             then(function(paradasObj){
@@ -76,7 +76,7 @@ angular.module('trenesMobile.services')
               defer.resolve(
                 _.groupBy(
                   _.sortBy(horariosActuales,function(horario){
-                    return parseFloat(horario.tiempo.replace(':',','))
+                    return parseFloat(horario.tiempo.replace(':','.'))*100
                   }),function(horario){
                     return horario.ruta;}));
             });
