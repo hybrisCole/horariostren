@@ -57,7 +57,6 @@ angular.module('trenesMobile.services')
         if(horaCorrespondencia===20 && minutoActual>30){
           rangoDeMinutosActual = correspondenciaDeMinutos["30"];
         }
-        console.log(rangoDeMinutosActual);
         this.getHorarios().then(function(horarios){
           var horariosActuales = _.filter(horarios,function(horario){
             var tiempoSplit = horario.tiempo.split(':'),

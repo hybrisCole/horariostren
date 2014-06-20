@@ -20,8 +20,8 @@
           <div class="pure-u-4-5">
             <p class="ruta-header">{{ruta.nombre}}</p>
             <div class="no-rutas" ng-click="go('rutasinfo/{{ruta.id}}')" ng-if="ruta.horariosActuales.length === 0">
-              <h1>No hay paradas disponibles</h1>
-              <a href="javascript::void();">ver lista de horarios y paradas de esta ruta</a>
+              <h1>A esta hora no pasa el tren!</h1>
+              <a href="javascript:void(0);">Tap para ver los horarios</a>
             </div>
           </div>
           <div class="pure-u-1-5">
