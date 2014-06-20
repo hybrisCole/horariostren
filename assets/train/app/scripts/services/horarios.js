@@ -13,10 +13,10 @@ angular.module('trenesMobile.services')
       "19":19,"20":20,"21":5,"22":5,"23":5,"24":5
     },
     correspondenciaDeMinutos = {
-      "0":[0,15],
-      "15":[15,30],
-      "30":[30,45],
-      "45":[45,59]
+      "0":[0,30],
+      //"15":[15,30],
+      "30":[30,59]
+      //"45":[45,59]
     };
     return {
       getHorarios: function () {
@@ -51,12 +51,13 @@ angular.module('trenesMobile.services')
 
         /*No hay trenes al inicio de las 15...*/
         if(horaCorrespondencia===15 && horaActual!==15){
-          rangoDeMinutosActual = correspondenciaDeMinutos["30"];
+          rangoDeMinutosActual = correspondenciaDeMinutos["0"];
         }
         /*No hay trenes al final de las 20...*/
         if(horaCorrespondencia===20 && minutoActual>30){
-          rangoDeMinutosActual = correspondenciaDeMinutos["15"];
+          rangoDeMinutosActual = correspondenciaDeMinutos["30"];
         }
+        console.log(rangoDeMinutosActual);
         this.getHorarios().then(function(horarios){
           var horariosActuales = _.filter(horarios,function(horario){
             var tiempoSplit = horario.tiempo.split(':'),
@@ -77,7 +78,7 @@ angular.module('trenesMobile.services')
                 _.groupBy(
                   _.sortBy(horariosActuales,function(horario){
                     return parseFloat(horario.tiempo.replace(':','.'))*100
-                  }),function(horario){
+                  }),function (horario){
                     return horario.ruta;}));
             });
         });
