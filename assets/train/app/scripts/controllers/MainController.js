@@ -1,20 +1,21 @@
 'use strict';
 
 angular.module('trenesMobile.controllers', []).controller('MainCtrl', ['$scope', '$rootScope', '$window', '$location', function ($scope, $rootScope, $window, $location) {
-  $scope.slideClass = 'gr';
+  $scope.slideClass = 'slide-velocity-next';
   $rootScope.back = function() {
-    $scope.slideClass = 'fx-fade-normal';
+    $scope.slideClass = 'slide-velocity-previous';
     $window.history.back();
   };
 
   $scope.go = function(path){
-    $scope.slideClass = 'fx-fade-right-big';
+    $scope.slideClass = 'slide-velocity-next';
+    console.log($scope.slideClass);
     $location.url(path);
     $rootScope.$broadcast('go');
   };
 
   $scope.goBack = function(path){
-    $scope.slideClass = 'fx-fade-left-big';
+    $scope.slideClass = 'slide-velocity-previous';
     $location.url(path);
     $rootScope.$broadcast('goBack');
   };

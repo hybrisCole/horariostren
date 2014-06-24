@@ -33,7 +33,7 @@
 </head>
 <body ng-controller="MainCtrl" class="sprint-mobile-body">
   <menuaction back="goBack(path)"></menuaction>   
-  <div ng-view ng-class="slideClass" class="main-cont fx-speed-700">
+  <div ng-view ng-class="slideClass" class="main-cont">
   </div>
   <div class="view-change-overlay" ng-show="displayViewChangeOverlay">
     <div class="view-change-spinner">
@@ -54,8 +54,8 @@
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-touch/angular-touch.js"></script>
-  <script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
-  <script src="bower_components/ng-Fx/dist/ng-Fx.js"></script>
+  <script src="bower_components/velocity/jquery.velocity.js"></script>
+  <script src="bower_components/ng-slide-velocity/ng-slide-velocity.js"></script>
   <script src="bower_components/lodash/dist/lodash.min.js"></script>
   <script src="bower_components/gmaps/gmaps.js"></script>
   <script src="bower_components/jquery.transit/site/jquery.transit-0.9.9.js"></script>
